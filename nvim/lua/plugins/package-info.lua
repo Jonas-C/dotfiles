@@ -1,0 +1,19 @@
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>y",
+	"<cmd>lua require('package-info').change_version()<cr>",
+	{ silent = true, noremap = true }
+)
+
+return {
+	"vuki656/package-info.nvim",
+	lazy = false,
+	version = false,
+	config = function()
+		require("package-info").setup({
+			autostart = true,
+			hide_unstable_versions = true,
+			package_manager = "yarn",
+		})
+	end,
+}
