@@ -1,0 +1,61 @@
+option_as_alt: Both
+window:
+  decorations: none
+  opacity: 1.0
+  padding:
+    x: 0
+    y: 0
+
+font:
+  normal:
+    family: Liga SFMono Nerd Font
+  bold:
+    family: Liga SFMono Nerd Font
+  size: 10.5
+  offset:
+    y: 10
+  # glyph_offset:
+  #   x: 0
+  #   y: 5
+  draw_bold_text_with_bright_colors: true
+
+bell:
+  duration: 0
+colors:
+  # Default colors
+  primary:
+    background: "#212121"
+    foreground: "#B0BEC5"
+  cursor:
+    text: "#727272"
+    cursor: "#FFCC00"
+
+  # Normal colors
+  normal:
+    black: "#1a1a1a"
+    red: "#f07178"
+    green: "#c3e88d"
+    yellow: "#ffcb6b"
+    blue: "#82aaff"
+    magenta: "#c792ea"
+    cyan: "#89ddff"
+    white: "#eeffff"
+
+  # Bright colors
+  bright:
+    black: "#1a1a1a"
+    red: "#f07178"
+    green: "#c3e88d"
+    yellow: "#ffcb6b"
+    blue: "#82aaff"
+    magenta: "#c792ea"
+    cyan: "#89ddff"
+    white: "#eeffff"
+
+  selection:
+    text: CellForeground
+    background: "#FFCC00"
+
+key_bindings:
+  - { key: Tab, mods: Control, action: None }
+  - { key: Tab, mods: Control|Shift, action: None }
