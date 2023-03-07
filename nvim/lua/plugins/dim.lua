@@ -1,6 +1,7 @@
 return {
 	"zbirenbaum/neodim",
 	event = "LspAttach",
+	cond = not vim.g.vscode,
 	opts = {
 		alpha = 0.75,
 		blend_color = "#000000",

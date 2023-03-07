@@ -2,6 +2,7 @@ local Util = require("util")
 return {
 	"nvim-telescope/telescope.nvim",
 	cmd = { "Telescope" },
+	cond = not vim.g.vscode,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons",

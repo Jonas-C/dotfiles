@@ -4,6 +4,7 @@ return {
 		"petertriho/nvim-scrollbar",
 	},
 	lazy = false,
+	cond = not vim.g.vscode,
 	config = function()
 		require("gitsigns").setup({
 			current_line_blame = true,

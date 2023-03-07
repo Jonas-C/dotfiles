@@ -1,5 +1,6 @@
 return {
 	"echasnovski/mini.bufremove",
+	cond = not vim.g.vscode,
 	keys = {
 		{
 			"<leader>q",

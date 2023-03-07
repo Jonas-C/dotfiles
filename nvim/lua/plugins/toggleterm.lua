@@ -1,5 +1,6 @@
 return {
 	"akinsho/toggleterm.nvim",
+	cond = not vim.g.vscode,
 	config = function()
 		require("toggleterm").setup({
 			direction = "horizontal",

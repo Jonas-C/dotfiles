@@ -1,5 +1,6 @@
 return {
 	"lukas-reineke/indent-blankline.nvim",
+	cond = not vim.g.vscode,
 	event = { "BufReadPost", "BufNewFile" },
 	opts = {
 		char = "│",

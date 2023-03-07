@@ -1,6 +1,7 @@
 return {
 	"marko-cerovac/material.nvim",
 	lazy = false,
+	cond = not vim.g.vscode,
 	priority = 1000,
 	config = function()
 		vim.g.material_style = "darker"

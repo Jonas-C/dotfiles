@@ -4,6 +4,7 @@ return {
 		build = function()
 			pcall(require("nvim-treesitter.install").update({ with_sync = true }))
 		end,
+		cond = not vim.g.vscode,
 		version = false,
 		event = "BufReadPost",
 		dependencies = {

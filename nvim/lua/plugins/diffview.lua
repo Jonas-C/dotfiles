@@ -13,6 +13,7 @@ end
 return {
 	"sindrets/diffview.nvim",
 	version = false,
+	cond = not vim.g.vscode,
 	keys = {
 		{ "<Leader>gg", ":lua DiffviewToggle()<cr>", { desc = "Show git diff" } },
 	},

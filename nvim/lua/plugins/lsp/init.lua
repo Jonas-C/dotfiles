@@ -2,6 +2,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		event = "BufReadPre",
+		cond = not vim.g.vscode,
 		dependencies = {
 			"jose-elias-alvarez/typescript.nvim",
 			{

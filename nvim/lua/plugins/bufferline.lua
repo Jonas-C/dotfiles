@@ -1,6 +1,7 @@
 return {
 	"akinsho/bufferline.nvim",
 	event = "VeryLazy",
+	cond = not vim.g.vscode,
 	opts = {
 		options = {
 			-- separator_style = "thin",

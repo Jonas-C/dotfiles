@@ -1,6 +1,7 @@
 return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
+	cond = not vim.g.vscode,
 	opts = {
 		views = {
 			cmdline_popup = {
