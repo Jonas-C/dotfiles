@@ -113,6 +113,7 @@ return {
 	},
 	{
 		"nvim-treesitter/playground",
+		event = "VeryLazy",
 	},
 	-- {
 	-- 	"andymass/vim-matchup",

@@ -9,7 +9,6 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
 	version = false,
-	lazy = false,
 	keys = {
 		{ "<c-tab>", "<cmd>Telescope buffers show_all_buffers=true sort_lastused=true<cr>", desc = "Switch buffer" },
 		{ "<leader>f", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },

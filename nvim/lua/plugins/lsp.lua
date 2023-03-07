@@ -1,14 +1,14 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
-		event = "BufReadPre",
+		event = "VeryLazy",
 		cond = not vim.g.vscode,
 		dependencies = {
 			"jose-elias-alvarez/null-ls.nvim",
 			"jose-elias-alvarez/typescript.nvim",
 			{
 				"b0o/schemastore.nvim",
-				lazy = false,
+				lazy = true,
 			},
 		},
 		config = function()
@@ -18,10 +18,12 @@ return {
 	{
 		"folke/neoconf.nvim",
 		cmd = "Neoconf",
+		lazy = true,
 		config = true,
 	},
 	{
 		"folke/neodev.nvim",
+		lazy = true,
 		opts = {
 			experimental = { pathStrict = true },
 		},

@@ -1,7 +1,7 @@
 return {
 	{
 		"L3MON4D3/LuaSnip",
-		lazy = false,
+		lazy = true,
 		cond = not vim.g.vscode,
 		opts = {
 			history = true,
@@ -35,6 +35,7 @@ return {
 	},
 	{
 		"hrsh7th/nvim-cmp",
+		lazy = true,
 		version = false,
 		event = "InsertEnter",
 		dependencies = {
