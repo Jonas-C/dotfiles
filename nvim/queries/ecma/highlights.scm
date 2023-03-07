@@ -119,11 +119,6 @@
 
 (string) @string @spell
 
-; Disable default highlighting of template strings. I have a customized
-; highlighting that ignores template strings for injected languages. This
-; prevents the `@string` highlight from being applied to the template string.
-; (template_string) @string
-
 (escape_sequence) @string.escape
 (regex_pattern) @string.regex
 (regex "/" @punctuation.bracket) ; Regex delimiters
