@@ -38,7 +38,7 @@ return {
 				-- matchup = {
 				-- 	enable = true,
 				-- },
-				-- endwise = { enable = true },
+				endwise = { enable = true },
 				-- autotag = {
 				-- 	enable = true,
 				-- },
