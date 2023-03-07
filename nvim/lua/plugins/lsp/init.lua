@@ -16,9 +16,24 @@ return {
 					experimental = { pathStrict = true },
 				},
 			},
-			"williamboman/mason.nvim",
+			-- {
+			-- 	"williamboman/mason.nvim",
+			--
+			-- 	dependencies = {
+			-- 		"williamboman/mason-lspconfig.nvim",
+			-- 		"jayp0521/mason-null-ls.nvim",
+			-- 	},
+			--
+			-- 	config = function()
+			-- 		vim.notify("Test")
+			--
+			-- 		local index = require("mason-registry.index")
+			-- 		-- Registry overrides
+			-- 		index["typescript-styled-plugin"] = "mason-registry.ts-styled-plugin"
+			-- 		require("mason").setup({ ui = { border = "rounded" } })
+			-- 	end,
+			-- },
 			"simrat39/rust-tools.nvim",
-			"williamboman/mason-lspconfig.nvim",
 			{
 				"hrsh7th/cmp-nvim-lsp",
 			},
@@ -151,28 +166,6 @@ return {
 					nls.builtins.diagnostics.flake8,
 				},
 			}
-		end,
-	},
-	{
-		"williamboman/mason.nvim",
-		cmd = "Mason",
-		keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
-		opts = {
-			ensure_installed = {
-				"stylua",
-				"shellcheck",
-				"shfmt",
-			},
-		},
-		config = function(_, opts)
-			require("mason").setup(opts)
-			local mr = require("mason-registry")
-			for _, tool in ipairs(opts.ensure_installed) do
-				local p = mr.get_package(tool)
-				if not p:is_installed() then
-					p:install()
-				end
-			end
 		end,
 	},
 }
