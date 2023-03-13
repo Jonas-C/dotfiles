@@ -1,9 +1,9 @@
 local group = vim.api.nvim_create_augroup("lsp", {})
 
 local formatters = {
-	"eslint",
+	-- "eslint",
 	"null-ls",
-	"stylelint_lsp",
+	-- "stylelint_lsp",
 }
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -37,7 +37,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 		-- Only run formatting if there are connected LSP clients
 		if vim.tbl_count(clients) ~= 0 then
-			vim.lsp.buf.format()
+			vim.lsp.buf.format({
+				bufnr = opts.bufnr,
+				timeout = 2000,
+				filter = function(client)
+					return client.name == "null-ls"
+				end,
+			})
 		end
 	end,
 })
