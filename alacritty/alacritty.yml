@@ -36,7 +36,8 @@ colors:
   selection:
     background: "#FFCC00"
     text: CellForeground
-
+env:
+  TERM: xterm-256color
 font:
   bold:
     family: JetBrainsMono Nerd Font
