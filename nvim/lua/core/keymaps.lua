@@ -1,9 +1,8 @@
 local keymap = vim.keymap.set
-
 keymap("", "<C-j>", "5j", { desc = "Go down five lines" })
 keymap("", "<C-k>", "5k", { desc = "Go up five lines" })
 keymap("n", "<esc><esc>", ":noh<CR>", { desc = "Remove highlights", silent = true })
-keymap("n", "<leader>s", "<cmd>w<CR>", { desc = "Save", silent = true })
+keymap({ "n", "i" }, "<A-s>", "<cmd>w<CR>", { desc = "Save", silent = true })
 
 vim.cmd("cabb Wq wq")
 vim.cmd("cabb Qa qa")

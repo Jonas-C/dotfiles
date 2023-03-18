@@ -3,7 +3,7 @@ return {
 	dependencies = {
 		"petertriho/nvim-scrollbar",
 	},
-	lazy = true,
+	lazy = false,
 	cond = not vim.g.vscode,
 	config = function()
 		require("gitsigns").setup({

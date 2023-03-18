@@ -32,6 +32,7 @@ return {
 			-- }
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = "all",
+				ignore_install = { "mlir" },
 				indent = {
 					enable = true,
 				},
@@ -39,9 +40,9 @@ return {
 				-- 	enable = true,
 				-- },
 				endwise = { enable = true },
-				-- autotag = {
-				-- 	enable = true,
-				-- },
+				autotag = {
+					enable = true,
+				},
 				highlight = {
 					enable = not vim.g.vscode,
 				},

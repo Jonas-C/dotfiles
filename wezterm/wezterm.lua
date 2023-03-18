@@ -13,7 +13,18 @@ local keys = {
 	{
 		key = "w",
 		mods = "SUPER",
-		action = wezterm.action.DisableDefaultAssignment,
+		action = wezterm.action.SendKey({
+			key = "w",
+			mods = "ALT",
+		}),
+	},
+	{
+		key = "s",
+		mods = "SUPER",
+		action = wezterm.action.SendKey({
+			key = "s",
+			mods = "ALT",
+		}),
 	},
 }
 

@@ -50,11 +50,18 @@ M.setup_servers = function()
 end
 
 M.setup = function()
+	for name, icon in pairs(require("core.icons").diagnostics) do
+		name = "DiagnosticSign" .. name
+		vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
+	end
 	vim.diagnostic.config({
 		underline = true,
 		update_in_insert = false,
 		signs = true,
 		severity_sort = true,
+		float = {
+			border = "rounded",
+		},
 	})
 	require("lsp.autocmd")
 	require("lsp.null-ls")

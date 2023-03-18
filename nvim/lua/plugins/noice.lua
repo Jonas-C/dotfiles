@@ -67,17 +67,9 @@ return {
 				-- This messes up formatting at times
 				enabled = false,
 			},
-			hover = {
-				enabled = true,
-				view = nil, -- when nil, use defaults from documentation
-				---@type NoiceViewOptions
-				opts = {}, -- merged with defaults from documentation
-			},
 			override = {
 				["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 				["vim.lsp.util.stylize_markdown"] = true,
-				["vim.diagnostics.open_float"] = false,
-				["cmp.entry.get_documentation"] = true,
 			},
 		},
 		presets = {

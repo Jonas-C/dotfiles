@@ -1,7 +1,6 @@
 return {
 	"marko-cerovac/material.nvim",
 	lazy = false,
-	cond = not vim.g.vscode,
 	priority = 1000,
 	config = function()
 		vim.g.material_style = "darker"
@@ -51,6 +50,7 @@ return {
 				DiffText = { bg = "#4D573E" },
 				["@tag.attribute"] = { fg = c.purple },
 				["@constant.builtin"] = { fg = c.cyan },
+				["@variable.builtin"] = { fg = c.cyan },
 				["@property"] = { fg = c.white },
 				["@member"] = { fg = c.blue },
 				["@variable"] = { fg = c.white },
@@ -70,12 +70,12 @@ return {
 				["htmlTagName"] = { fg = c.red },
 				["typescriptBinaryOp"] = { fg = c.cyan },
 				["@interface"] = { fg = c.yellow },
-				["@constructor"] = { fg = c.yellow },
+				["@constructor.tsx"] = { fg = c.yellow },
 				["@punctuation.bracket"] = { fg = c.yellow },
 				["@type"] = { fg = c.yellow },
 				["TSType"] = { fg = c.yellow },
 				["Type"] = { fg = c.yellow },
-				["@keyword"] = { fg = c.purple },
+				["@keyword"] = { fg = c.cyan },
 				["@keyword.return"] = { fg = c.cyan },
 				["@function.builtin"] = { fg = c.cyan },
 				["@property.styled"] = { fg = c.fg },
@@ -102,8 +102,11 @@ return {
 				["@pseudo.ampersand"] = { fg = c.yellow },
 				["@conditional"] = { fg = c.cyan },
 				["@keyword.declaration"] = { fg = c.purple },
-				["@keyword.export"] = { fg = c.cyan },
+				["@keyword.export.typescript"] = { fg = c.cyan },
+				["@lsp.type.interface"] = { fg = c.yellow },
+				GitSignsCurrentLineBlame = { link = "@comment" },
 				IndentBlanklineContextChar = { fg = c.cyan },
+				FloatBorder = { fg = c.white },
 			},
 		})
 		vim.cmd([[colorscheme material]])

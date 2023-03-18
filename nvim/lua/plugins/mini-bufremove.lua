@@ -3,14 +3,14 @@ return {
 	cond = not vim.g.vscode,
 	keys = {
 		{
-			"<leader>q",
+			"<M-w>",
 			function()
 				require("mini.bufremove").delete(0, false)
 			end,
 			desc = "Delete Buffer",
 		},
 		{
-			"<leader>Q",
+			"<M-W>",
 			function()
 				require("mini.bufremove").delete(0, true)
 			end,

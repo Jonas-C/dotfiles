@@ -8,3 +8,4 @@
 ;
 ; ; Highlight template string symbols
 ; (template_string "`" @string)
+

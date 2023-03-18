@@ -1,6 +1,7 @@
 return {
 	"nvim-neorg/neorg",
 	build = ":Neorg sync-parsers",
+	cond = not vim.g.vscode,
 	opts = {
 		load = {
 			["core.defaults"] = {}, -- Loads default behaviour

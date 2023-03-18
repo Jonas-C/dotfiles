@@ -28,11 +28,11 @@
 ((shorthand_property_identifier) @constant
  (#lua-match? @constant "^[A-Z_][A-Z%d_]+$"))
 
-((identifier) @variable.builtin
- (#vim-match? @variable.builtin "^(arguments|module|console|window|document)$"))
-
-((identifier) @function.builtin
- (#eq? @function.builtin "require"))
+; ((identifier) @variable.builtin
+;  (#vim-match? @variable.builtin "^(arguments|module|console|window|document)$"))
+;
+; ((identifier) @function.builtin
+;  (#eq? @function.builtin "require"))
 
 ; Function and method definitions
 ;--------------------------------
@@ -231,7 +231,6 @@
 "async"
 "await"
 "break"
-"class"
 "debugger"
 "get"
 "in"
@@ -284,4 +283,20 @@
 ; CREDIT TO: https://github.com/mskelton/dotfiles
 ; (shorthand_property_identifier_pattern) @variable
 ; [
-;  ] @keyword.declaration
+;  "interface"
+;  "type"
+;  ] @keyword.declaration (#set! "priority" 2000)
+
+[
+ "interface"
+ "type"
+ "class"
+ "declare"
+ ] @keyword.declaration
+
+[
+ (this)
+ ] @this
+
+
+
