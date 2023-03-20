@@ -18,18 +18,6 @@ return {
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
 		config = function()
-			local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-
-			-- Parser for styled components until tree-sitter supports it directly.
-			-- parser_config.styled = {
-			-- 	install_info = {
-			-- 		url = "https://github.com/mskelton/tree-sitter-styled",
-			-- 		branch = "main",
-			-- 		files = { "src/parser.c", "src/scanner.c" },
-			-- 		generate_requires_npm = true,
-			-- 	},
-			-- 	maintainers = { "@mskelton" },
-			-- }
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = "all",
 				ignore_install = { "mlir" },
