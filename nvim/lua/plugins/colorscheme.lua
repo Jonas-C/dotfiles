@@ -71,7 +71,7 @@ return {
 				["typescriptBinaryOp"] = { fg = c.cyan },
 				["@interface"] = { fg = c.yellow },
 				["@constructor.tsx"] = { fg = c.yellow },
-				["@punctuation.bracket"] = { fg = c.yellow },
+				["@punctuation.bracket.tsx"] = { fg = c.yellow },
 				["@type"] = { fg = c.yellow },
 				["TSType"] = { fg = c.yellow },
 				["Type"] = { fg = c.yellow },

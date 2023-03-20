@@ -1,7 +1,7 @@
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>y",
-	"<cmd>lua require('package-info').change_version()<cr>",
+	"<cmd>lua require('package-info').update()<cr>",
 	{ silent = true, noremap = true }
 )
 

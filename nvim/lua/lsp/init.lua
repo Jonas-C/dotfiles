@@ -40,13 +40,25 @@ M.setup_servers = function()
 			validate = { enable = true },
 		},
 	})
-	M.server("tsserver", {
-		init_options = {
-			plugins = {
-				M.get_ts_pkg("typescript-styled-plugin"),
+
+	require("typescript").setup({
+		server = {
+			capabilities = M.default_capabilities(),
+			init_options = {
+				plugins = {
+					M.get_ts_pkg("typescript-styled-plugin"),
+				},
 			},
 		},
 	})
+
+	-- M.server("tsserver", {
+	-- 	init_options = {
+	-- 		plugins = {
+	-- 			M.get_ts_pkg("typescript-styled-plugin"),
+	-- 		},
+	-- 	},
+	-- })
 end
 
 M.setup = function()

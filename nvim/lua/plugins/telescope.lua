@@ -13,6 +13,7 @@ return {
 		{ "<c-tab>", "<cmd>Telescope buffers show_all_buffers=true sort_lastused=true<cr>", desc = "Switch buffer" },
 		{ "<leader>f", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
 		{ "<leader>p", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+		{ "<leader>gf", "<cmd>Telescope git_status<cr>", desc = "Find files" },
 		{ "<leader>0", "<cmd>Telescope resume<cr>", desc = "Resume previous Telescope session" },
 		{
 			"<leader>a",
