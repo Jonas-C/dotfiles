@@ -14,6 +14,7 @@ return {
 		require("package-info").setup({
 			autostart = true,
 			hide_unstable_versions = true,
+			hide_up_to_date = true,
 			package_manager = "yarn",
 		})
 	end,

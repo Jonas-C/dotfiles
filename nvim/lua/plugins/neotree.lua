@@ -42,6 +42,11 @@ return {
 				},
 			},
 			filesystem = {
+				window = {
+					mappings = {
+						["f"] = "telescope_find",
+					},
+				},
 				hijack_netrw_behavior = "open_current",
 				follow_current_file = true,
 				open_current = true,
@@ -49,6 +54,16 @@ return {
 					visible = true,
 					hide_dotfiles = false,
 					hide_gitignored = false,
+				},
+				commands = {
+					telescope_find = function(state)
+						local node = state.tree:get_node()
+						local path = node:get_id()
+						if node.type ~= "directory" then
+							path = node:get_parent_id()
+						end
+						require("telescope.builtin").live_grep({ search_dirs = { path } })
+					end,
 				},
 			},
 			window = {
