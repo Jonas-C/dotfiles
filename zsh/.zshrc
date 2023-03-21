@@ -29,13 +29,13 @@ ZSH_AUTOSUGGEST_MANUAL_REBIND=true
 bindkey '^ ' autosuggest-accept
 
 
-# for file in ~/.config/zsh/local/; do
-#     source "$file"
-# done
+for file in $HOME/.config/zsh/*; do
+    source "$file"
+done
 
 alias vim="env TERM=$TERM nvim"
 alias home="cd $HOME"
-alias reload="source ~/.config/zsh/.zshrc"
+alias reload="source ~/.zshrc"
 alias tmuxconf='vim ~/.config/tmux/tmux.conf'
 alias wezconf='vim ~/.config/wezterm/wezterm.lua'
 alias ls='exa -G --color auto --icons -s type'
