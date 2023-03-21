@@ -287,12 +287,12 @@
 ;  "type"
 ;  ] @keyword.declaration (#set! "priority" 2000)
 
-[
- "interface"
- "type"
- "class"
- "declare"
- ] @keyword.declaration
+; [
+;  "interface"
+;  "type"
+;  "class"
+;  "declare"
+;  ] @keyword.declaration
 
 [
  (this)
