@@ -5,4 +5,6 @@ emacs
 yarn
 rustlang
 gh/hosts.yml
+.zcomdump*
+.zsh_history
 
