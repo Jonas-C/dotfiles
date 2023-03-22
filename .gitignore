@@ -6,4 +6,5 @@ yarn
 rustlang
 gh/hosts.yml
 .zsh_history
+zsh/.config/
 
