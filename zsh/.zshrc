@@ -43,3 +43,5 @@ alias ll='exa -l --color always --icons -s type'
 alias ta="tmux attach"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
