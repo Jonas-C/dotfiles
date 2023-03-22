@@ -4,9 +4,6 @@ return {
 	cond = not vim.g.vscode,
 	config = function()
 		local wk = require("which-key")
-		wk.register({
-			["<C-j>"] = { "5j", "[NAVIGATION] Go down 5 lines" },
-			["<C-k>"] = { "5k", "[NAVIGATION] Go up 5 lines" },
-		})
+		wk.register()
 	end,
 }
