@@ -38,6 +38,7 @@ return {
 				},
 			},
 			defaults = {
+				file_ignore_patterns = { "./node_modules/*", ".git/*" },
 				mappings = {
 					i = {
 						["<esc>"] = actions.close,
@@ -48,11 +49,6 @@ return {
 						["<c-u>"] = false,
 					},
 				},
-				pickers = {
-					live_grep = {
-						additional_args = { "--fixed-strings" },
-					},
-				},
 				prompt_prefix = "❯ ",
 				selection_caret = "❯ ",
 				sorting_strategy = "ascending",
@@ -60,6 +56,14 @@ return {
 					horizontal = {
 						prompt_position = "top",
 					},
+				},
+			},
+			pickers = {
+				find_files = {
+					hidden = true,
+				},
+				live_grep = {
+					additional_args = { "--hidden" },
 				},
 			},
 		})
