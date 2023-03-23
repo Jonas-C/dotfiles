@@ -39,7 +39,9 @@ return {
 				["NeoTreeGitUntracked"] = { fg = c.green },
 				["NeoTreeNormal"] = { bg = "#1a1a1a" },
 				["NeoTreeNormalNC"] = { bg = "#1a1a1a" },
-				-- IlluminatedWordText = { fg = c.yellow },
+				IlluminatedWordText = { bg = colors.editor.highlight },
+				IlluminatedWordRead = { bg = colors.editor.highlight },
+				IlluminatedWordWrite = { bg = colors.editor.highlight },
 				["@include"] = {
 					fg = c.cyan,
 					italic = true,
