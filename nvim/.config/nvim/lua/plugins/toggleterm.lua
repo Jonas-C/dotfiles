@@ -10,7 +10,7 @@ return {
 	cond = not vim.g.vscode,
 	event = "VeryLazy",
 	opts = {
-		direction = "tab",
+		direction = "float",
 		size = 60,
 		insert_mappings = false,
 		open_mapping = [[<leader>+]],

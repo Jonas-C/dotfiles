@@ -8,7 +8,7 @@ keymap("n", "<leader>gw", "<cmd>G toggle_word_diff<cr>", { desc = "Toggle word d
 keymap("n", "<leader>gp", "<cmd>G preview_hunk_inline<cr>", { desc = "Preview hunk changes" })
 keymap("n", "<leader>gn", "<cmd>G next_hunk<cr>", { desc = "Go to next hunk" })
 keymap("n", "<leader>ga", "<cmd>G stage_hunk<cr>", { desc = "Go to next hunk" })
-keymap("n", "<leader>ga", "<cmd>G reset_hunk<cr>", { desc = "Go to next hunk" })
+keymap("n", "<leader>gr", "<cmd>G reset_hunk<cr>", { desc = "Go to next hunk" })
 
 vim.cmd("cabb Wq wq")
 vim.cmd("cabb Qa qa")
