@@ -54,6 +54,7 @@ key_bindings:
   # Send chars to support <M-s> and <M-w> in NeoVim
   - { chars: "\x1bs", key: S, mods: Super }
   - { chars: "\x1bw", key: W, mods: Super }
+  - { chars: "\x1bW", key: W, mods: Super|Shift }
   # Switch Tmux windows with <M-${DIGIT}>
   - { chars: "\x02\x31", key: Key1, mods: Super }
   - { chars: "\x02\x32", key: Key2, mods: Super }
