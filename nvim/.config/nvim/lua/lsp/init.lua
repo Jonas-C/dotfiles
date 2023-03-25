@@ -49,6 +49,9 @@ M.setup_servers = function()
 				plugins = {
 					M.get_ts_pkg("typescript-styled-plugin"),
 				},
+				preferences = {
+					importModuleSpecifierPreference = "relative",
+				},
 			},
 			handlers = {
 				["textDocument/definition"] = function(_, result, ...)

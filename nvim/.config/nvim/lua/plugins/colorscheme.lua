@@ -95,7 +95,7 @@ return {
 				["@namespace"] = { fg = c.yellow },
 				["@function.macro"] = { fg = c.yellow },
 				["@punctuation.special"] = { fg = c.cyan },
-				["@none"] = { fg = c.yellow },
+				["@none"] = { fg = c.white },
 				["@dollar"] = { fg = c.yellow },
 				["@type.qualifier"] = { fg = c.orange },
 				["@operator.styled"] = { fg = c.white },
