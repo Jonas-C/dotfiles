@@ -1,5 +1,4 @@
 # This will change in Alacritty 0.12.
-alt_send_esc: false
 bell:
   duration: 0
 colors:
