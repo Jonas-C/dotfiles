@@ -45,6 +45,13 @@ return {
 						"TSRainbowViolet",
 						"TSRainbowCyan",
 					},
+
+					query = {
+						"rainbow-parens",
+						html = "rainbow-parens",
+						javascript = "rainbow-parens",
+						tsx = "rainbow-blocks",
+					},
 					-- extended_mode = false,
 					-- termcolors = {},
 				},
