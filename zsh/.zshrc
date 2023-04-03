@@ -40,6 +40,7 @@ alias tmuxconf='vim ~/.config/tmux/tmux.conf'
 alias wezconf='vim ~/.config/wezterm/wezterm.lua'
 alias ls='exa -G --color auto --icons -s type'
 alias ll='exa -l --color always --icons -s type'
+alias cat="bat"
 alias ta="tmux attach"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
