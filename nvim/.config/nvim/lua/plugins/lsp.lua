@@ -28,4 +28,5 @@ return {
 			experimental = { pathStrict = true },
 		},
 	},
+	{ "simrat39/rust-tools.nvim" },
 }

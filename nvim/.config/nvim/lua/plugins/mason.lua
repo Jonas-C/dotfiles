@@ -10,6 +10,7 @@ return {
 		local index = require("mason-registry.index")
 		-- Registry overrides
 		index["typescript-styled-plugin"] = "mason-registry.ts-styled-plugin"
+		index["typescript-plugin-css-modules"] = "mason-registry.typescript-plugin-css-modules"
 
 		require("mason").setup({ ui = { border = "rounded" } })
 		require("mason-lspconfig").setup({ automatic_installation = true })

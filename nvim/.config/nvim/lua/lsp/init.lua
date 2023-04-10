@@ -29,10 +29,11 @@ end
 
 M.setup_servers = function()
 	M.server("lua_ls")
-	M.server("rust_analyzer")
 	M.server("yamlls")
 	M.server("eslint")
 	M.server("graphql")
+	M.server("cssmodules_ls")
+	M.server("cssls")
 	M.server("jsonls", {
 		on_new_config = function(new_config)
 			new_config.settings.json.schemas = new_config.settings.json.schemas or {}
@@ -43,12 +44,15 @@ M.setup_servers = function()
 		},
 	})
 
+	require("rust-tools").setup()
+
 	require("typescript").setup({
 		server = {
 			capabilities = M.default_capabilities(),
 			init_options = {
 				plugins = {
 					M.get_ts_pkg("typescript-styled-plugin"),
+					M.get_ts_pkg("typescript-plugin-css-modules"),
 				},
 				preferences = {
 					importModuleSpecifierPreference = "relative",

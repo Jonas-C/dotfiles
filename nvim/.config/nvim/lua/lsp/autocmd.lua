@@ -3,6 +3,7 @@ local group = vim.api.nvim_create_augroup("lsp", {})
 local formatters = {
 	-- "eslint",
 	"null-ls",
+	"rust_analyzer",
 	-- "stylelint_lsp",
 }
 
@@ -17,6 +18,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "L", vim.diagnostic.open_float, opts)
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 		vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
+		vim.keymap.set("n", "gp", vim.lsp.buf.signature_help, opts)
 		vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, opts)
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 		vim.keymap.set("n", "gn", vim.diagnostic.goto_next)
@@ -36,15 +38,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	callback = function(opts)
 		local clients = vim.lsp.get_active_clients({ bufnr = opts.buf })
 
-		-- Only run formatting if there are connected LSP clients
 		if vim.tbl_count(clients) ~= 0 then
-			vim.lsp.buf.format({
-				bufnr = opts.bufnr,
-				timeout = 2000,
-				filter = function(client)
-					return client.name == "null-ls"
-				end,
-			})
+			vim.lsp.buf.format()
 		end
 	end,
 })
