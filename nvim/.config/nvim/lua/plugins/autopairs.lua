@@ -1,8 +1,9 @@
 return {
-	"echasnovski/mini.pairs",
+	"windwp/nvim-autopairs",
 	cond = not vim.g.vscode,
 	event = "VeryLazy",
-	config = function(_, opts)
-		require("mini.pairs").setup(opts)
-	end,
+	opts = {
+		check_ts = true,
+		ts_config = { java = false },
+	},
 }
