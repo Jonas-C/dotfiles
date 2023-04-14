@@ -12,7 +12,7 @@ return {
 	version = false,
 	config = function()
 		require("package-info").setup({
-			autostart = true,
+			autostart = false,
 			hide_unstable_versions = true,
 			hide_up_to_date = true,
 			package_manager = "yarn",
