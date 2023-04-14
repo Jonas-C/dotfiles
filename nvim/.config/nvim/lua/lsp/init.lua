@@ -51,7 +51,11 @@ M.setup_servers = function()
 			capabilities = M.default_capabilities(),
 			init_options = {
 				plugins = {
-					M.get_ts_pkg("typescript-styled-plugin"),
+					{
+						name = "@styled/typescript-styled-plugin",
+						-- Surprisingly, using a / in a package name causes some issues with the fs.
+						location = M.get_install_path("typescript-styled-plugin"),
+					},
 					M.get_ts_pkg("typescript-plugin-css-modules"),
 				},
 				preferences = {
