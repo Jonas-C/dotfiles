@@ -32,7 +32,7 @@ return {
 				},
 				context_commentstring = {
 					enable = true,
-					enable_autocmd = true,
+					enable_autocmd = false,
 				},
 				rainbow = {
 					enable = true,
