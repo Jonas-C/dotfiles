@@ -1,4 +1,5 @@
 local M = {}
+local utils = require("util")
 
 local mason = require("mason-registry")
 
@@ -24,6 +25,15 @@ M.server = function(server, config)
 	end
 
 	require("lspconfig")[server].setup(config)
+end
+
+--- Normalize a location to a uri and range
+--- @param location table
+M.normalize_location = function(location)
+	return {
+		uri = location.uri or location.targetUri,
+		range = location.range or location.targetSelectionRange,
+	}
 end
 
 M.setup_servers = function()
@@ -66,41 +76,23 @@ M.setup_servers = function()
 				-- opens a quickfix list when it really doesn't need to.
 				["textDocument/definition"] = function(_, result, ...)
 					if vim.tbl_islist(result) then
-						local seen = {}
+						local ignored_paths = {
+							"react/index.d.ts",
+						}
 
-						result = vim.tbl_filter(function(item)
-							local location = M.normalize_location(item)
-							local key = location.uri .. ":" .. location.range.start.line
-
-							-- Skip this line if we already have a reference to the same line
-							if seen[key] then
-								return false
+						for key, value in ipairs(result) do
+							for _, ignored_path in pairs(ignored_paths) do
+								-- If an ignored path is the first result, keep it as it's
+								-- likely the intended path.
+								if key ~= 1 and utils.ends_with(value.targetUri, ignored_path) then
+									table.remove(result, key)
+								end
 							end
-
-							seen[key] = true
-							return true
-						end, result)
+						end
 					end
 
 					-- Defer to the built-in handler after filtering the results
 					vim.lsp.handlers["textDocument/definition"](_, result, ...)
-				end,
-
-				-- Filter out current line when listing references.
-				["textDocument/references"] = function(_, result, ...)
-					if vim.tbl_islist(result) then
-						local cursor_line = unpack(vim.api.nvim_win_get_cursor(0))
-
-						result = vim.tbl_filter(function(item)
-							local location = M.normalize_location(item)
-							local line = location.range.start.line + 1
-
-							return line ~= cursor_line
-						end, result)
-					end
-
-					-- Defer to the built-in handler after filtering the results
-					vim.lsp.handlers["textDocument/references"](_, result, ...)
 				end,
 			},
 		},
@@ -121,6 +113,7 @@ M.setup = function()
 			border = "rounded",
 		},
 	})
+	require("lsp.handlers").register_handlers()
 	require("lsp.autocmd")
 	require("lsp.null-ls")
 	require("neodev").setup({})
