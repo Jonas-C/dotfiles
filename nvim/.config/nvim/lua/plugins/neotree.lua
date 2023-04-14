@@ -68,6 +68,9 @@ return {
 			},
 			window = {
 				position = "left",
+				mappings = {
+					["<space>"] = false,
+				},
 			},
 		})
 		vim.cmd([[nnoremap \ :Neotree reveal<cr>]])

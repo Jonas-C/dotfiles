@@ -1,4 +1,3 @@
-vim.api.nvim_set_var("mapleader", " ")
 vim.opt.fillchars = {
 	foldopen = "",
 	foldclose = "",
@@ -7,6 +6,7 @@ vim.opt.fillchars = {
 	diff = " ",
 	eob = " ",
 }
+vim.g.mapleader = " "
 vim.opt.termguicolors = true
 vim.opt.fileencoding = "utf-8"
 vim.opt.autoread = true
