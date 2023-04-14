@@ -4,20 +4,6 @@ return {
 	enabled = true,
 	cond = not vim.g.vscode,
 	opts = {
-		-- cmdline = {
-		-- 	enabled = true,
-		-- },
-		-- popupmenu = {
-		-- 	enabled = true,
-		-- },
-		-- notify = {
-		-- 	enabled = true,
-		-- },
-		-- lsp = {
-		-- 	progress = {
-		-- 		enabled = true,
-		-- 	},
-		-- },
 		views = {
 			notify = {
 				enabled = false,

@@ -89,14 +89,6 @@ M.setup_servers = function()
 			},
 		},
 	})
-
-	-- M.server("tsserver", {
-	-- 	init_options = {
-	-- 		plugins = {
-	-- 			M.get_ts_pkg("typescript-styled-plugin"),
-	-- 		},
-	-- 	},
-	-- })
 end
 
 M.setup = function()

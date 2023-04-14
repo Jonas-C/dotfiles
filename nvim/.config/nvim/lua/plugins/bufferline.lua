@@ -4,7 +4,6 @@ return {
 	cond = not vim.g.vscode,
 	opts = {
 		options = {
-			-- separator_style = "thin",
 			indicator = {
 				style = "underline",
 			},

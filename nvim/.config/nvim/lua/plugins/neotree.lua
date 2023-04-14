@@ -9,7 +9,6 @@ return {
 	},
 	lazy = false,
 	keys = {
-		--
 		{
 			"<leader>e",
 			function()

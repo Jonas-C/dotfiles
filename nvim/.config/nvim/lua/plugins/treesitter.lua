@@ -4,7 +4,6 @@ return {
 		build = function()
 			pcall(require("nvim-treesitter.install").update({ with_sync = true }))
 		end,
-		-- cond = not vim.g.vscode,
 		version = false,
 		event = "BufReadPost",
 		dependencies = {
@@ -24,9 +23,6 @@ return {
 				indent = {
 					enable = true,
 				},
-				-- matchup = {
-				-- 	enable = true,
-				-- },
 				endwise = { enable = true },
 				autotag = {
 					enable = true,
@@ -88,10 +84,4 @@ return {
 			end, true)
 		end,
 	},
-	-- {
-	-- 	"andymass/vim-matchup",
-	-- 	config = function()
-	-- 		vim.g.matchup_matchparen_offscreen = { method = "popup" }
-	-- 	end,
-	-- },
 }
