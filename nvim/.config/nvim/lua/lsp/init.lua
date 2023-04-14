@@ -56,7 +56,6 @@ M.setup_servers = function()
 						-- Surprisingly, using a / in a package name causes some issues with the fs.
 						location = M.get_install_path("typescript-styled-plugin"),
 					},
-					M.get_ts_pkg("typescript-plugin-css-modules"),
 				},
 				preferences = {
 					importModuleSpecifierPreference = "relative",
