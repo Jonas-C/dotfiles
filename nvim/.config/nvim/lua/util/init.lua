@@ -20,13 +20,6 @@ function M.on_attach(on_attach)
 	})
 end
 
---- Returns true when the provided string ends with the provided ending
---- @param str string
---- @param ending string
-M.ends_with = function(str, ending)
-	return ending == "" or string.sub(str, -#ending) == ending
-end
-
 function M.getVisualSelection()
 	vim.cmd('noau normal! "vy"')
 	local text = vim.fn.getreg("v")

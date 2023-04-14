@@ -1,7 +1,6 @@
 local M = {}
 
 local mason = require("mason-registry")
-local utils = require("util")
 
 M.default_capabilities = function()
 	return require("cmp_nvim_lsp").default_capabilities()
@@ -62,29 +61,46 @@ M.setup_servers = function()
 				},
 			},
 			handlers = {
+				-- When there are multiple results on the same line for a definition, only
+				-- show the first one. This prevents many times where going to definition
+				-- opens a quickfix list when it really doesn't need to.
 				["textDocument/definition"] = function(_, result, ...)
-					-- Filter out certain paths from the results that are 99% of the time
-					-- false positive results for my use case. If I explicitly jump to
-					-- them, go there, otherwise ignore them.
 					if vim.tbl_islist(result) then
-						local ignored_paths = {
-							"react/index.d.ts",
-							"tailwind-variants/dist/index.d.ts",
-						}
+						local seen = {}
 
-						for key, value in ipairs(result) do
-							for _, ignored_path in pairs(ignored_paths) do
-								-- If an ignored path is the first result, keep it as it's
-								-- likely the intended path.
-								if key ~= 1 and utils.ends_with(value.targetUri, ignored_path) then
-									table.remove(result, key)
-								end
+						result = vim.tbl_filter(function(item)
+							local location = M.normalize_location(item)
+							local key = location.uri .. ":" .. location.range.start.line
+
+							-- Skip this line if we already have a reference to the same line
+							if seen[key] then
+								return false
 							end
-						end
+
+							seen[key] = true
+							return true
+						end, result)
 					end
 
 					-- Defer to the built-in handler after filtering the results
 					vim.lsp.handlers["textDocument/definition"](_, result, ...)
+				end,
+
+				-- Filter out current line when listing references.
+				["textDocument/references"] = function(_, result, ...)
+					if vim.tbl_islist(result) then
+						local cursor_line = unpack(vim.api.nvim_win_get_cursor(0))
+
+						result = vim.tbl_filter(function(item)
+							local location = M.normalize_location(item)
+							local line = location.range.start.line + 1
+
+							return line ~= cursor_line
+						end, result)
+					end
+
+					-- Defer to the built-in handler after filtering the results
+					vim.lsp.handlers["textDocument/references"](_, result, ...)
 				end,
 			},
 		},
