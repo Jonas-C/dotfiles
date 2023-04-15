@@ -13,7 +13,6 @@ return {
 			},
 			"HiPhish/nvim-ts-rainbow2",
 			"windwp/nvim-ts-autotag",
-			"nvim-treesitter/nvim-treesitter-textobjects",
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
 		config = function()

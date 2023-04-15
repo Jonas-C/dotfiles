@@ -16,12 +16,6 @@ return {
 		end,
 	},
 	{
-		"folke/neoconf.nvim",
-		cmd = "Neoconf",
-		lazy = true,
-		config = true,
-	},
-	{
 		"folke/neodev.nvim",
 		lazy = true,
 		opts = {
