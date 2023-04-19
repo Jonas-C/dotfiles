@@ -9,6 +9,7 @@ keymap("n", "<leader>gp", "<cmd>G preview_hunk_inline<cr>", { desc = "Preview hu
 keymap("n", "<leader>gn", "<cmd>G next_hunk<cr>", { desc = "Go to next hunk" })
 keymap("n", "<leader>ga", "<cmd>G stage_hunk<cr>", { desc = "Go to next hunk" })
 keymap("n", "<leader>gr", "<cmd>G reset_hunk<cr>", { desc = "Go to next hunk" })
+keymap("n", "<leader>gpi", "<cmd>PackageInfoShowForce<cr>", { desc = "Show newer package versions", silent = true })
 
 vim.cmd("cabb Wq wq")
 vim.cmd("cabb Qa qa")
