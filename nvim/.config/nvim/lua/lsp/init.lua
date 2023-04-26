@@ -38,7 +38,13 @@ end
 
 M.setup_servers = function()
 	M.server("lua_ls")
-	M.server("yamlls")
+	M.server("yamlls", {
+		settings = {
+			yaml = {
+				keyOrdering = false,
+			},
+		},
+	})
 	M.server("eslint")
 	M.server("graphql")
 	M.server("cssmodules_ls")
