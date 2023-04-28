@@ -7,6 +7,7 @@ return {
 	cond = not vim.g.vscode,
 	config = function()
 		require("gitsigns").setup({
+			_inline2 = true,
 			current_line_blame = true,
 			sign_priority = 0,
 			signs = {
