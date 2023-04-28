@@ -47,8 +47,6 @@ return {
 						javascript = "rainbow-parens",
 						tsx = "rainbow-blocks",
 					},
-					-- extended_mode = false,
-					-- termcolors = {},
 				},
 			})
 
