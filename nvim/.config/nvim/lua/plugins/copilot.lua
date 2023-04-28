@@ -8,9 +8,6 @@ return {
 				auto_trigger = true,
 				keymap = {
 					accept = "<C- >",
-					decline = "<C-c>",
-					next = "<C-n>",
-					previous = "<C-p>",
 				},
 			},
 		})
