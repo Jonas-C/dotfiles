@@ -11,6 +11,20 @@ keymap("n", "<leader>ga", "<cmd>G stage_hunk<cr>", { desc = "Go to next hunk" })
 keymap("n", "<leader>gr", "<cmd>G reset_hunk<cr>", { desc = "Go to next hunk" })
 keymap("n", "<leader>gpi", "<cmd>PackageInfoShowForce<cr>", { desc = "Show newer package versions", silent = true })
 
+-- Down is really the next line
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
+
+-- Center screen after jumping to next search result
+-- Not sure if I love this just yet.
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
+
+-- Move to the end of yanked text after yank and paste
+vim.keymap.set("n", "p", "p`]")
+vim.keymap.set("v", "y", "y`]")
+vim.keymap.set("v", "p", "p`]")
+
 vim.cmd("cabb Wq wq")
 vim.cmd("cabb Qa qa")
 vim.cmd("cabb WQ wq")
