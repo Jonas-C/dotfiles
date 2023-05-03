@@ -106,6 +106,9 @@ return {
 						end,
 					},
 					{
+						name = "neorg",
+					},
+					{
 						name = "nvim_lsp",
 						-- Removes <use>${1}</use> snippet
 						entry_filter = function(entry, _)

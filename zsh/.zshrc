@@ -9,7 +9,7 @@ antigen apply
 bindkey -v
 export NVIM_APPNAME="nvim"
 export PATH="$PATH:$HOME.local/share/bob/nvim-bin"
-export PATH="$PATH:/Users/jec/.local/share/bob/nvim-bin"
+export PATH="$PATH:$HOME/jec/.local/share/bob/nvim-bin"
 
 # Auto-suggestion colors
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#515151"
@@ -32,8 +32,7 @@ bindkey '^ ' autosuggest-accept
 for file in $HOME/.config/zsh/*; do
     source "$file"
 done
-
-alias vim="env TERM=$TERM nvim"
+alias vim="env TERM=$TERM CC=gcc-13 nvim"
 alias home="cd $HOME"
 alias reload="source ~/.zshrc"
 alias tmuxconf='vim ~/.config/tmux/tmux.conf'

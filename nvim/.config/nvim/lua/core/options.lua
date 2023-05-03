@@ -7,6 +7,7 @@ vim.opt.fillchars = {
 	eob = " ",
 }
 vim.g.mapleader = " "
+vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.fileencoding = "utf-8"
 vim.opt.autoread = true
@@ -41,3 +42,4 @@ vim.opt.laststatus = 2
 vim.opt.updatetime = 200
 -- Do not automatically comment newlines. Caused by ftplugin
 vim.api.nvim_create_autocmd("FileType", { command = "set formatoptions-=o" })
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, { pattern = { "*.norg" }, command = "set conceallevel=3" })
