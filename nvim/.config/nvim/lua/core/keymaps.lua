@@ -11,6 +11,24 @@ keymap("n", "<leader>ga", "<cmd>G stage_hunk<cr>", { desc = "Go to next hunk" })
 keymap("n", "<leader>gr", "<cmd>G reset_hunk<cr>", { desc = "Go to next hunk" })
 keymap("n", "<leader>gpi", "<cmd>PackageInfoShowForce<cr>", { desc = "Show newer package versions", silent = true })
 
+-- harpoon
+keymap("n", "<leader>a", function()
+	require("harpoon.mark").add_file()
+end, { desc = "Add a file to Harpoon", silent = true })
+
+keymap("n", "<leader>h", "<cmd>Telescope harpoon marks<cr>", { desc = "Show Harpoon marks", silent = true })
+keymap("n", "<leader>h", function()
+	require("harpoon.ui").toggle_quick_menu()
+end, { desc = "Show Harpoon marks", silent = true })
+
+keymap("n", "<leader>n", function()
+	require("harpoon.ui").nav_next()
+end, { desc = "Go to previous Harpoon mark", silent = true })
+
+keymap("n", "<leader>p", function()
+	require("harpoon.ui").nav_next()
+end, { desc = "Go to previous Harpoon mark", silent = true })
+
 -- Down is really the next line
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")

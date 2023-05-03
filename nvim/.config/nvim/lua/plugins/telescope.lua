@@ -16,7 +16,7 @@ return {
 			desc = "Switch buffer",
 		},
 		{ "<leader>f", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
-		{ "<leader>p", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+		{ "<leader>d", "<cmd>Telescope find_files<cr>", desc = "Find files" },
 		{ "<leader>gf", "<cmd>Telescope git_status<cr>", desc = "Find files" },
 		{ "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Show git branches" },
 		{ "<leader>0", "<cmd>Telescope resume<cr>", desc = "Resume previous Telescope session" },
@@ -43,7 +43,7 @@ return {
 				},
 			},
 			defaults = {
-				file_ignore_patterns = { ".git/", "./node_modules/" },
+				file_ignore_patterns = { ".git/", "./node_modules/", "venv/" },
 				mappings = {
 					i = {
 						["<esc>"] = actions.close,
