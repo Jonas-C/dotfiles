@@ -1,7 +1,7 @@
 local keymap = vim.keymap.set
 keymap("", "<C-j>", "5j", { desc = "Go down five lines" })
 keymap("", "<C-k>", "5k", { desc = "Go up five lines" })
-keymap("n", "<esc><esc>", ":noh<CR>", { desc = "Remove highlights", silent = true })
+keymap({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 keymap({ "n", "i" }, "<A-s>", "<cmd>w<CR>", { desc = "Save", silent = true })
 keymap("n", "<leader>gd", "<cmd>G toggle_deleted<cr>", { desc = "Toggle deleted lines" })
 keymap("n", "<leader>gw", "<cmd>G toggle_word_diff<cr>", { desc = "Toggle word diff" })
