@@ -34,7 +34,8 @@ return {
 					enable_autocmd = false,
 				},
 				rainbow = {
-					enable = true,
+					-- I love rainbow highlights, but they're currently breaking DiffView.nvim
+					enable = false,
 					hlgroups = {
 						"TSRainbowYellow",
 						"TSRainbowViolet",
