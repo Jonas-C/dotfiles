@@ -59,7 +59,13 @@ M.setup_servers = function()
 		},
 	})
 
-	require("rust-tools").setup()
+	require("rust-tools").setup({
+		tools = {
+			inlay_hints = {
+				only_current_line = true,
+			},
+		},
+	})
 
 	require("typescript").setup({
 		server = {
