@@ -27,7 +27,6 @@ return {
 				"nvim-cmp",
 				"nvim-web-devicons",
 				"telescope",
-				"which-key",
 			},
 			custom_highlights = {
 				["TSRainbowYellow"] = { fg = c.yellow },
