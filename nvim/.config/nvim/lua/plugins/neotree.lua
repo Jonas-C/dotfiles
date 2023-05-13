@@ -48,7 +48,7 @@ return {
 				},
 				hijack_netrw_behavior = "open_current",
 				follow_current_file = true,
-				group_empty_dirs = true,
+				-- group_empty_dirs = true,
 				open_current = true,
 				filtered_items = {
 					visible = true,
