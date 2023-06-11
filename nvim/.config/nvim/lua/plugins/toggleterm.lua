@@ -34,6 +34,7 @@ return {
 		direction = "float",
 		size = 60,
 		insert_mappings = false,
+		start_in_insert = true,
 		open_mapping = [[<leader>+]],
 		float_opts = {
 			border = "curved",
