@@ -48,6 +48,3 @@ vim.opt.cmdheight = 1
 vim.opt.pumheight = 10
 vim.opt.laststatus = 2
 vim.opt.updatetime = 200
--- Do not automatically comment newlines. Caused by ftplugin
-vim.api.nvim_create_autocmd("FileType", { command = "set formatoptions-=o" })
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, { pattern = { "*.norg" }, command = "set conceallevel=3" })
