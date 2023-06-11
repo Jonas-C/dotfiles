@@ -10,7 +10,7 @@ vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.grepprg = "rg --vimgrep"
 vim.opt.laststatus = 0
-vim.opt.pumpblend = 10
+vim.opt.pumblend = 10
 vim.opt.shortmess:append({ W = true, I = true, c = true, C = true })
 vim.opt.wildmode = "longest:full,full"
 
