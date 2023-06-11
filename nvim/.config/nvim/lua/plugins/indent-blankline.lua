@@ -4,7 +4,13 @@ return {
 	event = { "BufReadPost", "BufNewFile" },
 	opts = {
 		char = "│",
-		filetype_exclude = { "help", "neo-tree", "lazy" },
+		filetype_exclude = {
+			"help",
+			"neo-tree",
+			"lazy",
+			"mason",
+			"toggleterm",
+		},
 		show_trailing_blankline_indent = false,
 		show_current_context = true,
 		use_treesitter = true,
