@@ -18,14 +18,25 @@ return {
 	},
 	config = function()
 		vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-		vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
-		vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
-		vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
-		vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
 
 		require("neo-tree").setup({
 			enable_diagnostics = true,
 			default_component_configs = {
+				indent = {
+					with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
+					expander_collapsed = "",
+					expander_expanded = "",
+					expander_highlight = "NeoTreeExpander",
+				},
+				icon = {
+					folder_closed = "",
+					folder_open = "",
+					folder_empty = "",
+					folder_empty_open = "",
+					-- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
+					-- then these will never be used.
+					default = " ",
+				},
 				git_status = {
 					symbols = {
 						added = "A",
@@ -47,6 +58,7 @@ return {
 					},
 				},
 				hijack_netrw_behavior = "open_current",
+				use_libuv_file_watcher = true,
 				follow_current_file = true,
 				-- group_empty_dirs = true,
 				open_current = true,
