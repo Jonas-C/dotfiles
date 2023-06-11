@@ -43,6 +43,11 @@ vim.keymap.set("n", "p", "p`]")
 vim.keymap.set("v", "y", "y`]")
 vim.keymap.set("v", "p", "p`]")
 
+-- Stay in indent mode
+keymap("v", "<", "<gv")
+keymap("v", ">", ">gv")
+keymap("v", "p", '"_dP')
+
 vim.cmd("cabb Wq wq")
 vim.cmd("cabb Qa qa")
 vim.cmd("cabb WQ wq")
