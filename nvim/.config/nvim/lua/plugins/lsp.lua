@@ -4,6 +4,7 @@ return {
 		event = "VeryLazy",
 		cond = not vim.g.vscode,
 		dependencies = {
+			"pmizio/typescript-tools.nvim",
 			"jose-elias-alvarez/null-ls.nvim",
 			"jose-elias-alvarez/typescript.nvim",
 			{
