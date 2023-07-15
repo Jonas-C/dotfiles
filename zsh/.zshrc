@@ -1,5 +1,5 @@
 #Plugins 
-source /opt/homebrew/share/antigen/antigen.zsh
+source $(brew --prefix)/share/antigen/antigen.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle git
@@ -8,8 +8,7 @@ antigen apply
 
 bindkey -v
 export NVIM_APPNAME="nvim"
-export PATH="$PATH:$HOME.local/share/bob/nvim-bin"
-export PATH="$PATH:$HOME/jec/.local/share/bob/nvim-bin"
+export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
 
 # Auto-suggestion colors
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#515151"
