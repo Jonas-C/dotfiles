@@ -1,5 +1,6 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
+	branch = "v3.x",
 	cond = not vim.g.vscode,
 	cmd = "Neotree",
 	dependencies = {
@@ -20,6 +21,7 @@ return {
 		vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 		require("neo-tree").setup({
+			enable_normal_mode_for_inputs = true,
 			enable_diagnostics = true,
 			default_component_configs = {
 				indent = {
@@ -59,7 +61,10 @@ return {
 				},
 				hijack_netrw_behavior = "open_current",
 				use_libuv_file_watcher = true,
-				follow_current_file = true,
+				follow_current_file = {
+					enabled = true,
+					leave_dirs_open = true,
+				},
 				-- group_empty_dirs = true,
 				open_current = true,
 				filtered_items = {
