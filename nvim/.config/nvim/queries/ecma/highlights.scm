@@ -281,22 +281,3 @@
 ;----------
 ; END COPY
 ; CREDIT TO: https://github.com/mskelton/dotfiles
-; (shorthand_property_identifier_pattern) @variable
-; [
-;  "interface"
-;  "type"
-;  ] @keyword.declaration (#set! "priority" 2000)
-
-; [
-;  "interface"
-;  "type"
-;  "class"
-;  "declare"
-;  ] @keyword.declaration
-
-[
- (this)
- ] @this
-
-
-
