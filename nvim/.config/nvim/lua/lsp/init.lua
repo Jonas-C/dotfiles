@@ -67,46 +67,45 @@ M.setup_servers = function()
 		},
 	})
 
-	require("typescript").setup({
-		server = {
-			capabilities = M.default_capabilities(),
-			init_options = {
-				plugins = {
-					{
-						name = "@styled/typescript-styled-plugin",
-						-- Surprisingly, using a / in a package name causes some issues with the fs.
-						location = M.get_install_path("typescript-styled-plugin"),
-					},
-				},
-				preferences = {
-					importModuleSpecifierPreference = "relative",
-				},
+	require("typescript-tools").setup({
+		capabilities = M.default_capabilities(),
+		settings = {
+			separate_diagnostic_server = true,
+			publish_diagnostic_on = "change",
+			-- I prefer minimal code actions
+			expose_as_code_action = {},
+			tsserver_plugins = {
+				"@styled/typescript-styled-plugin",
 			},
-			handlers = {
-				-- When there are multiple results on the same line for a definition, only
-				-- show the first one. This prevents many times where going to definition
-				-- opens a quickfix list when it really doesn't need to.
-				["textDocument/definition"] = function(_, result, ...)
-					if vim.tbl_islist(result) then
-						local ignored_paths = {
-							"react/index.d.ts",
-						}
+			tsserver_file_preferences = {
+				importModuleSpecifierPreference = "relative",
+			},
+		},
 
-						for key, value in ipairs(result) do
-							for _, ignored_path in pairs(ignored_paths) do
-								-- If an ignored path is the first result, keep it as it's
-								-- likely the intended path.
-								if key ~= 1 and utils.ends_with(value.targetUri, ignored_path) then
-									table.remove(result, key)
-								end
+		handlers = {
+			-- When there are multiple results on the same line for a definition, only
+			-- show the first one. This prevents many times where going to definition
+			-- opens a quickfix list when it really doesn't need to.
+			["textDocument/definition"] = function(_, result, ...)
+				if vim.tbl_islist(result) then
+					local ignored_paths = {
+						"react/index.d.ts",
+					}
+
+					for key, value in ipairs(result) do
+						for _, ignored_path in pairs(ignored_paths) do
+							-- If an ignored path is the first result, keep it as it's
+							-- likely the intended path.
+							if key ~= 1 and utils.ends_with(value.targetUri, ignored_path) then
+								table.remove(result, key)
 							end
 						end
 					end
+				end
 
-					-- Defer to the built-in handler after filtering the results
-					vim.lsp.handlers["textDocument/definition"](_, result, ...)
-				end,
-			},
+				-- Defer to the built-in handler after filtering the results
+				vim.lsp.handlers["textDocument/definition"](_, result, ...)
+			end,
 		},
 	})
 end
