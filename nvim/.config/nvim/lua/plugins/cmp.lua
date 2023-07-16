@@ -124,6 +124,15 @@ return {
 					},
 					{ name = "path" },
 				}),
+				sorting = {
+					comparators = {
+						cmp.config.compare.offset,
+						cmp.config.compare.exact,
+						cmp.config.compare.score,
+						cmp.config.compare.recently_used,
+						cmp.config.compare.kind,
+					},
+				},
 				experimental = {
 					ghost_text = {
 						hl_group = "LspCodeLens",
