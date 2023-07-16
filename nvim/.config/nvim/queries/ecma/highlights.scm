@@ -281,3 +281,6 @@
 ;----------
 ; END COPY
 ; CREDIT TO: https://github.com/mskelton/dotfiles
+
+(template_string "`" @string)
+((template_string) @string (#not-injected? @string styled css keyframes gql html))
