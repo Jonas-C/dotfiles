@@ -16,7 +16,6 @@ keymap("n", "<leader>a", function()
 	require("harpoon.mark").add_file()
 end, { desc = "Add a file to Harpoon", silent = true })
 
-keymap("n", "<leader>h", "<cmd>Telescope harpoon marks<cr>", { desc = "Show Harpoon marks", silent = true })
 keymap("n", "<leader>h", function()
 	require("harpoon.ui").toggle_quick_menu()
 end, { desc = "Show Harpoon marks", silent = true })
