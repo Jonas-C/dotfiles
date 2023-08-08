@@ -6,7 +6,6 @@ return {
 		dependencies = {
 			"pmizio/typescript-tools.nvim",
 			"jose-elias-alvarez/null-ls.nvim",
-			"jose-elias-alvarez/typescript.nvim",
 			{
 				"b0o/schemastore.nvim",
 				lazy = true,
