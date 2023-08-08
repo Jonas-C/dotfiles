@@ -47,7 +47,6 @@ M.setup_servers = function()
 	})
 	M.server("eslint")
 	M.server("graphql")
-	M.server("cssmodules_ls")
 	M.server("cssls")
 	M.server("jsonls", {
 		on_new_config = function(new_config)
