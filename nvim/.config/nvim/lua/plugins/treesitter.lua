@@ -5,7 +5,7 @@ return {
 			pcall(require("nvim-treesitter.install").update({ with_sync = true }))
 		end,
 		version = false,
-		event = "BufReadPost",
+		event = { "BufReadPost", "BufNewFile" },
 		dependencies = {
 			{
 				"RRethy/nvim-treesitter-endwise",
