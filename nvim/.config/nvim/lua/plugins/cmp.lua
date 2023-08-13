@@ -55,8 +55,9 @@ return {
 				formatting = {
 					fields = { "kind", "abbr", "menu" },
 					format = function(entry, vim_item)
-						if entry.completion_item.detail ~= nil and entry.completion_item.detail ~= "" then
-							vim_item.menu = entry.completion_item.detail
+						local data = entry.completion_item.data
+						if data ~= nil and data.entryNames and data.entryNames[1] and data.entryNames[1].data then
+							vim_item.menu = data.entryNames[1].data.moduleSpecifier
 						end
 						local kind = icons.kinds[vim_item.kind]
 						if kind then
