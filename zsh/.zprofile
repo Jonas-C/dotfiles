@@ -2,5 +2,5 @@
 arch=$(uname -m)
 
 if [[ "$arch" == "arm64" ]]; then
-  eval "$(/url/local/bin/brew shellenv)"
+  eval $(/opt/homebrew/bin/brew shellenv)
 fi
