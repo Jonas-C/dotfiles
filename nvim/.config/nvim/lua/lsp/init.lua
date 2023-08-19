@@ -70,7 +70,7 @@ M.setup_servers = function()
 		capabilities = M.default_capabilities(),
 		settings = {
 			separate_diagnostic_server = true,
-			publish_diagnostic_on = "change",
+			publish_diagnostic_on = "insert",
 			-- I prefer minimal code actions
 			expose_as_code_action = {},
 			tsserver_plugins = {
