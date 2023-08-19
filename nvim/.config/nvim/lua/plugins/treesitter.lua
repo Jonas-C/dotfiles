@@ -20,7 +20,7 @@ return {
 				ensure_installed = "all",
 				ignore_install = { "mlir" },
 				indent = {
-					enable = true,
+					enable = false,
 				},
 				endwise = { enable = true },
 				autotag = {
