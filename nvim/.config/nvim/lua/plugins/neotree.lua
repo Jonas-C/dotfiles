@@ -16,6 +16,12 @@ return {
 				require("neo-tree.command").execute({ focus = true })
 			end,
 		},
+		{
+			"<leader>rr",
+			function()
+				require("neo-tree.command").execute({ reveal = true })
+			end,
+		},
 	},
 	config = function()
 		vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
@@ -62,7 +68,7 @@ return {
 				hijack_netrw_behavior = "open_current",
 				use_libuv_file_watcher = true,
 				follow_current_file = {
-					enabled = true,
+					enabled = false,
 					leave_dirs_open = true,
 				},
 				-- group_empty_dirs = true,
