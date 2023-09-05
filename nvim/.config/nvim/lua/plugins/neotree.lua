@@ -30,6 +30,10 @@ return {
 			enable_normal_mode_for_inputs = true,
 			enable_diagnostics = true,
 			default_component_configs = {
+				file_size = { enabled = false },
+				type = { enabled = false },
+				last_modified = { enabled = false },
+				created = { enabled = false },
 				indent = {
 					with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
 					expander_collapsed = "",
