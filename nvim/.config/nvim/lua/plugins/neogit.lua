@@ -15,5 +15,11 @@ return {
 		integrations = {
 			diffview = true,
 		},
+		mappings = {
+			finder = {
+				["<c-j>"] = "Next",
+				["<c-k>"] = "Previous",
+			},
+		},
 	},
 }
