@@ -8,7 +8,8 @@ keymap("n", "<leader>gw", "<cmd>G toggle_word_diff<cr>", { desc = "Toggle word d
 keymap("n", "<leader>gp", "<cmd>G preview_hunk_inline<cr>", { desc = "Preview hunk changes" })
 keymap("n", "<leader>gn", "<cmd>G next_hunk<cr>", { desc = "Go to next hunk" })
 keymap("n", "<leader>ga", "<cmd>G stage_hunk<cr>", { desc = "Go to next hunk" })
-keymap("n", "<leader>gr", "<cmd>G reset_hunk<cr>", { desc = "Go to next hunk" })
+keymap("n", "<leader>grh", "<cmd>G reset_hunk<cr>", { desc = "Go to next hunk" })
+keymap("n", "<leader>grb", "<cmd>G reset_buffer<cr>", { desc = "Go to next hunk" })
 keymap("n", "<leader>gl", "<cmd>G blame_line<cr>", { desc = "Show blame line" })
 keymap("n", "<leader>gpi", "<cmd>PackageInfoShowForce<cr>", { desc = "Show newer package versions", silent = true })
 
