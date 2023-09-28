@@ -22,61 +22,12 @@
 ((identifier) @constructor
  (#lua-match? @constructor "^[A-Z]"))
 
-((identifier) @constant
- (#lua-match? @constant "^[A-Z_][A-Z%d_]+$"))
-
-((shorthand_property_identifier) @constant
- (#lua-match? @constant "^[A-Z_][A-Z%d_]+$"))
-
-; ((identifier) @variable.builtin
-;  (#vim-match? @variable.builtin "^(arguments|module|console|window|document)$"))
+; ((identifier) @constant
+;  (#lua-match? @constant "^[A-Z_][A-Z%d_]+$"))
 ;
-; ((identifier) @function.builtin
-;  (#eq? @function.builtin "require"))
+; ((shorthand_property_identifier) @constant
+;  (#lua-match? @constant "^[A-Z_][A-Z%d_]+$"))
 
-; Function and method definitions
-;--------------------------------
-
-(function
-  name: (identifier) @function)
-(function_declaration
-  name: (identifier) @function)
-(generator_function
-  name: (identifier) @function)
-(generator_function_declaration
-  name: (identifier) @function)
-(method_definition
-  name: [(property_identifier) (private_property_identifier)] @method)
-
-(pair
-  key: (property_identifier) @method
-  value: (function))
-(pair
-  key: (property_identifier) @method
-  value: (arrow_function))
-
-(assignment_expression
-  left: (member_expression
-    property: (property_identifier) @method)
-  right: (arrow_function))
-(assignment_expression
-  left: (member_expression
-    property: (property_identifier) @method)
-  right: (function))
-
-(variable_declarator
-  name: (identifier) @function
-  value: (arrow_function))
-(variable_declarator
-  name: (identifier) @function
-  value: (function))
-
-(assignment_expression
-  left: (identifier) @function
-  right: (arrow_function))
-(assignment_expression
-  left: (identifier) @function
-  right: (function))
 
 ; Function and method calls
 ;--------------------------
