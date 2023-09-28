@@ -6,3 +6,4 @@
 (class_name) @type
 (class_selector "." @type)
 
+(plain_value) @value.plain

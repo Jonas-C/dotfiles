@@ -105,6 +105,8 @@ return {
 				["@keyword.declaration"] = { fg = c.purple },
 				["@keyword.export.typescript"] = { fg = c.cyan },
 				["@lsp.type.interface"] = { fg = c.yellow },
+				["@value.plain"] = { fg = "#B0BEC5" },
+				["@error.css"] = { fg = "#B0BEC5" },
 				CmpItemMenu = { fg = c.white },
 				GitSignsCurrentLineBlame = { link = "@comment" },
 				IndentBlanklineContextChar = { fg = c.cyan },
