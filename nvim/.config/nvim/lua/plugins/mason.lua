@@ -8,10 +8,6 @@ return {
 	},
 	config = function()
 		require("mason").setup({
-			registries = {
-				"lua:local-registry",
-				"github:mason-org/mason-registry",
-			},
 			ui = { border = "rounded" },
 		})
 		require("mason-lspconfig").setup({ automatic_installation = true })
