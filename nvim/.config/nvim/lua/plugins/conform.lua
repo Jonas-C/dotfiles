@@ -3,7 +3,6 @@ return {
 	opts = {
 		format_on_save = {
 			timeout_ms = 1000,
-			lsp_fallback = false,
 		},
 		notify_on_error = true,
 		formatters_by_ft = {
