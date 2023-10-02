@@ -14,7 +14,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local client = vim.lsp.get_client_by_id(args.data.client_id)
 		local opts = { buffer = bufnr, silent = true }
 
-		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 		vim.keymap.set("n", "L", vim.diagnostic.open_float, opts)
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 		vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
@@ -27,19 +26,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- Only enable formatting for specific LSP's. Many LSPs that have built-in
 		-- formatting don't have robust enough formatting (e.g. tsserver is not as
 		-- complete as Prettier).
-		local format = vim.tbl_contains(formatters, client.name)
-		client.server_capabilities.documentFormattingProvider = format
-		client.server_capabilities.documentRangeFormattingProvider = format
+		-- local format = vim.tbl_contains(formatters, client.name)
+		-- client.server_capabilities.documentFormattingProvider = format
+		-- client.server_capabilities.documentRangeFormattingProvider = format
 	end,
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-	group = group,
-	callback = function(opts)
-		local clients = vim.lsp.get_active_clients({ bufnr = opts.buf })
-
-		if vim.tbl_count(clients) ~= 0 then
-			vim.lsp.buf.format()
-		end
-	end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+-- 	group = group,
+-- 	callback = function(opts)
+-- 		local clients = vim.lsp.get_active_clients({ bufnr = opts.buf })
+--
+-- 		if vim.tbl_count(clients) ~= 0 then
+-- 			vim.lsp.buf.format()
+-- 		end
+-- 	end,
+-- })
