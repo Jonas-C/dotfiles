@@ -5,7 +5,7 @@ return {
 		cond = not vim.g.vscode,
 		dependencies = {
 			"pmizio/typescript-tools.nvim",
-			"jose-elias-alvarez/null-ls.nvim",
+			"nvimtools/none-ls.nvim",
 			{
 				"b0o/schemastore.nvim",
 				lazy = true,
