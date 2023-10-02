@@ -6,10 +6,6 @@ return {
 		dependencies = {
 			"pmizio/typescript-tools.nvim",
 			"nvimtools/none-ls.nvim",
-			{
-				"b0o/schemastore.nvim",
-				lazy = true,
-			},
 		},
 		config = function()
 			return require("lsp").setup()
@@ -23,4 +19,8 @@ return {
 		},
 	},
 	{ "simrat39/rust-tools.nvim" },
+	{
+		"b0o/schemastore.nvim",
+		lazy = true,
+	},
 }
