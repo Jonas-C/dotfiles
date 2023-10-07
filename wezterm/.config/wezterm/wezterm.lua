@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local mux = wezterm.mux
 local keys = {
 	{
 		key = "Tab",
@@ -28,28 +29,35 @@ local keys = {
 	},
 }
 
+wezterm.on("gui-attached", function()
+	-- maximize all displayed windows on startup
+	local workspace = mux.get_active_workspace()
+	for _, window in ipairs(mux.all_windows()) do
+		if window:get_workspace() == workspace then
+			window:gui_window():maximize()
+		end
+	end
+end)
+
 return {
 	enable_tab_bar = false,
 	send_composed_key_when_left_alt_is_pressed = true,
-	freetype_interpreter_version = 40,
-	freetype_load_target = "Light",
 	term = "wezterm",
-	line_height = 1.2,
-	-- underline_position = -20,
-	underline_thickness = 2,
+	line_height = 1.3,
+	cell_width = 0.9,
 	underline_position = -8,
 	window_decorations = "RESIZE",
 	show_update_window = true,
 	check_for_updates = true,
-	-- font = wezterm.font("Liga SFMono Nerd Font", { weight = "Medium", stretch = "Normal", style = "Normal" }),
-	font = wezterm.font("JetBrains Mono", { weight = "Bold" }),
+
+	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold" }),
 	color_scheme = "Material Darker (base16)",
 	-- Yellow cursor for neovim :)
 	colors = {
 		cursor_bg = "#FFCC00",
 		cursor_fg = "white",
 	},
-	font_size = 11,
+	font_size = 10.5,
 	audible_bell = "Disabled",
 	window_padding = {
 		left = 0,
