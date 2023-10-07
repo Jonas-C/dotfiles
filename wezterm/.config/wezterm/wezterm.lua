@@ -75,7 +75,8 @@ return {
 	show_update_window = true,
 	check_for_updates = true,
 
-	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold" }),
+	font = wezterm.font("JetBrainsMonoNL Nerd Font", { weight = "Bold" }),
+
 	color_scheme = "Material Darker (base16)",
 	-- Yellow cursor for neovim :)
 	colors = {
