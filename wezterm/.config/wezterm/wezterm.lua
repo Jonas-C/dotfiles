@@ -12,6 +12,31 @@ local keys = {
 		action = wezterm.action.DisableDefaultAssignment,
 	},
 	{
+		key = "1",
+		mods = "SUPER",
+		action = wezterm.action.SendString("\x02\x31"),
+	},
+	{
+		key = "2",
+		mods = "SUPER",
+		action = wezterm.action.SendString("\x02\x32"),
+	},
+	{
+		key = "3",
+		mods = "SUPER",
+		action = wezterm.action.SendString("\x02\x33"),
+	},
+	{
+		key = "4",
+		mods = "SUPER",
+		action = wezterm.action.SendString("\x02\x34"),
+	},
+	{
+		key = "5",
+		mods = "SUPER",
+		action = wezterm.action.SendString("\x02\x35"),
+	},
+	{
 		key = "w",
 		mods = "SUPER",
 		action = wezterm.action.SendKey({
