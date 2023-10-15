@@ -1,40 +1,121 @@
-# This will change in Alacritty 0.12.
-bell:
-  duration: 0
+# Taken from https://github.com/catppuccin/nvim/discussions/323
+# with slight modifications
 colors:
-  # Default colors
-  bright:
-    black: "#1a1a1a"
-    blue: "#82aaff"
-    cyan: "#89ddff"
-    green: "#c3e88d"
-    magenta: "#c792ea"
-    red: "#f07178"
-    white: "#eeffff"
-    yellow: "#ffcb6b"
+  primary:
+    background: "#1a1c2a" # base
+    foreground: "#eeffff" # text
+    # Bright and dim foreground colors
+    dim_foreground: "#eeffff" # text
+    bright_foreground: "#eeffff" # text
+
+  # Cursor colors
   cursor:
     cursor: "#FFCC00"
     text: "#727272"
+  vi_mode_cursor:
+    text: "#1a1c2a" # base
+    cursor: "#a0a8f6" # lavender
+
+  # Search colors
+  search:
+    matches:
+      foreground: "#1a1c2a" # base
+      background: "#a6b0d8" # subtext0
+    focused_match:
+      foreground: "#1a1c2a" # base
+      background: "#96d382" # green
+    footer_bar:
+      foreground: "#1a1c2a" # base
+      background: "#a6b0d8" # subtext0
+
+  # Keyboard regex hints
+  hints:
+    start:
+      foreground: "#1a1c2a" # base
+      background: "#eaca89" # yellow
+    end:
+      foreground: "#1a1c2a" # base
+      background: "#a6b0d8" # subtext0
+
+  # Selection colors
+  selection:
+    text: "#1a1c2a" # base
+    background: "#efc9c2" # rosewater
 
   # Normal colors
   normal:
-    black: "#1a1a1a"
-    blue: "#82aaff"
-    cyan: "#89ddff"
-    green: "#c3e88d"
-    magenta: "#c792ea"
-    red: "#f07178"
-    white: "#eeffff"
-    yellow: "#ffcb6b"
+    black: "#3e4255" # surface1
+    red: "#ea7183" # red
+    green: "#96d382" # green
+    yellow: "#eaca89" # yellow
+    blue: "#739df2" # blue
+    magenta: "#f2a7de" # pink
+    cyan: "#78cec1" # teal
+    white: "#a6b0d8" # subtext1
 
   # Bright colors
-  primary:
-    background: "#212121"
-    foreground: "#B0BEC5"
+  bright:
+    black: "#505469" # surface2
+    red: "#ea7183" # red
+    green: "#96d382" # green
+    yellow: "#eaca89" # yellow
+    blue: "#739df2" # blue
+    magenta: "#f2a7de" # pink
+    cyan: "#78cec1" # teal
+    white: "#959ec2" # subtext0
 
-  selection:
-    background: "#FFCC00"
-    text: CellForeground
+  # Dim colors
+  dim:
+    black: "#3e4255" # surface1
+    red: "#ea7183" # red
+    green: "#96d382" # green
+    yellow: "#ffcb6b" # yellow
+    blue: "#739df2" # blue
+    magenta: "#f2a7de" # pink
+    cyan: "#78cec1" # teal
+    white: "#a6b0d8" # subtext1
+
+  indexed_colors:
+    - { index: 16, color: "#f39967" }
+    - { index: 17, color: "#efc9c2" }
+# This will change in Alacritty 0.12.
+bell:
+  duration: 0
+# Material-esque colorscheme
+# colors:
+#   # Default colors
+#   bright:
+#     black: "#1a1a1a"
+#     blue: "#82aaff"
+#     cyan: "#89ddff"
+#     green: "#c3e88d"
+#     magenta: "#c792ea"
+#     red: "#f07178"
+#     white: "#eeffff"
+#     yellow: "#ffcb6b"
+#   cursor:
+#     cursor: "#FFCC00"
+#     text: "#727272"
+#
+#   # Normal colors
+#   normal:
+#     black: "#1a1a1a"
+#     blue: "#82aaff"
+#     cyan: "#89ddff"
+#     green: "#c3e88d"
+#     magenta: "#c792ea"
+#     red: "#f07178"
+#     white: "#eeffff"
+#     yellow: "#ffcb6b"
+#
+#   # Bright colors
+#   primary:
+#     background: "#212121"
+#     foreground: "#B0BEC5"
+#
+#   selection:
+#     background: "#FFCC00"
+#     text: CellForeground
 env:
   TERM: alacritty
 font:
@@ -48,7 +129,7 @@ font:
     family: JetBrainsMono Nerd Font
   offset:
     y: 10
-  size: 10.5
+  size: 11
 key_bindings:
   # Send chars to support <M-s> and <M-w> in NeoVim
   - { chars: "\x1bs", key: S, mods: Super }
