@@ -68,14 +68,16 @@ return {
 	enable_tab_bar = false,
 	send_composed_key_when_left_alt_is_pressed = true,
 	term = "wezterm",
-	line_height = 1.3,
+	line_height = 1.4,
 	cell_width = 0.9,
 	underline_position = -8,
 	window_decorations = "RESIZE",
 	show_update_window = true,
 	check_for_updates = true,
-
-	font = wezterm.font("JetBrainsMonoNL Nerd Font", { weight = "Bold" }),
+	font = wezterm.font_with_fallback({
+		{ family = "JetBrains Mono", weight = "Bold" },
+		{ family = "Apple Color Emoji" },
+	}),
 
 	color_scheme = "Material Darker (base16)",
 	-- Yellow cursor for neovim :)
@@ -83,7 +85,7 @@ return {
 		cursor_bg = "#FFCC00",
 		cursor_fg = "white",
 	},
-	font_size = 10.5,
+	font_size = 11,
 	audible_bell = "Disabled",
 	window_padding = {
 		left = 0,
