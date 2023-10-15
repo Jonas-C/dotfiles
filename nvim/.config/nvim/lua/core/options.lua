@@ -5,6 +5,8 @@ vim.opt.fillchars = {
 	foldsep = " ",
 	diff = " ",
 	eob = " ",
+	vert = "▏",
+	horiz = "▁",
 }
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.grepformat = "%f:%l:%c:%m"
