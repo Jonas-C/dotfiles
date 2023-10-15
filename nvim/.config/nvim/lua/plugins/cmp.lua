@@ -46,7 +46,6 @@ return {
 		},
 		opts = function()
 			local cmp = require("cmp")
-			local icons = require("core.icons")
 
 			return {
 				completion = {
@@ -59,10 +58,10 @@ return {
 						if data ~= nil and data.entryNames and data.entryNames[1] and data.entryNames[1].data then
 							vim_item.menu = data.entryNames[1].data.moduleSpecifier
 						end
-						local kind = icons.kinds[vim_item.kind]
-						if kind then
-							vim_item.kind = kind
-						end
+						local kind =
+							require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+						local strings = vim.split(kind.kind, "%s", { trimempty = true })
+						kind.kind = " " .. (strings[1] or "") .. " "
 						return vim_item
 					end,
 				},
