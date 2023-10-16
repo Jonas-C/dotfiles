@@ -9,12 +9,13 @@ vim.opt.fillchars = {
 	horiz = "▁",
 }
 vim.opt.completeopt = "menu,menuone,noselect"
+vim.opt.conceallevel = 3 -- Hide * markup for bold and italic
 vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.grepprg = "rg --vimgrep"
-vim.opt.laststatus = 0
 vim.opt.pumblend = 10
 vim.opt.shortmess:append({ W = true, I = true, c = true, C = true })
 vim.opt.wildmode = "longest:full,full"
+vim.opt.showmode = false
 
 vim.g.mapleader = " "
 vim.opt.relativenumber = true
