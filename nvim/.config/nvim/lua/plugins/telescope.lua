@@ -67,9 +67,6 @@ return {
 				lsp_references = {
 					show_line = false,
 				},
-				find_files = {
-					hidden = true,
-				},
 				live_grep = {
 					additional_args = { "--hidden" },
 				},
