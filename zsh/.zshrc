@@ -10,6 +10,8 @@ bindkey -v
 export NVIM_APPNAME="nvim"
 export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
 
+export RIPGREP_CONFIG_PATH="$HOME/.config/.ripgreprc"
+
 # Auto-suggestion colors
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#515151"
 
