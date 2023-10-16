@@ -16,7 +16,6 @@ return {
 			exclude = {
 				filetypes = {
 					"help",
-					"lazy",
 					"neo-tree",
 					"toggleterm",
 					"lazy",
