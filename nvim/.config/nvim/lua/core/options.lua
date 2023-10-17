@@ -9,7 +9,6 @@ vim.opt.fillchars = {
 	horiz = "▁",
 }
 vim.opt.completeopt = "menu,menuone,noselect"
-vim.opt.conceallevel = 3 -- Hide * markup for bold and italic
 vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.grepprg = "rg --vimgrep"
 vim.opt.pumblend = 10
