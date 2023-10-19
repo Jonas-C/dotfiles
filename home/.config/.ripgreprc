@@ -1,1 +1,9 @@
 --smart-case
+--no-line-number
+--max-columns=250
+#--colors=line:none
+#--colors=line:style:bold
+--colors=path:none
+--colors=line:none
+--colors=column:none
+--colors=match:fg:115,157,242
