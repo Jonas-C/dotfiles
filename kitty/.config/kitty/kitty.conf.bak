@@ -1,0 +1,7 @@
+enable_audio_bell no
+draw_minimal_borders yes
+hide_window_decorations yes
+map super+s send_text application \x1bs
+
+
+
