@@ -26,7 +26,7 @@ return {
 						blue = "#739df2",
 						lavender = "#a0a8f6",
 						-- This is a custom override
-						text = "#EEFFFF",
+						text = "#ffffff",
 						subtext1 = "#a6b0d8",
 						subtext0 = "#959ec2",
 						overlay2 = "#848cad",
