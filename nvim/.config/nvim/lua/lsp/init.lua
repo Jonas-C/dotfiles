@@ -117,7 +117,7 @@ M.setup = function()
 	vim.diagnostic.config({
 		underline = true,
 		update_in_insert = false,
-		signs = true,
+		signs = false,
 		severity_sort = true,
 		float = {
 			border = "rounded",
