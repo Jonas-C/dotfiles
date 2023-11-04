@@ -41,3 +41,12 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
 	end,
 })
+
+-- close cmdwin with <q>
+-- I can live with not having macros in the cmdwin
+vim.api.nvim_create_autocmd("CmdwinEnter", {
+	group = augroup("close_cmdwin_with_q"),
+	callback = function(event)
+		vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+	end,
+})
