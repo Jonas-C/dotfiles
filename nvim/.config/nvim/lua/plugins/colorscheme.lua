@@ -53,6 +53,7 @@ return {
 						["@variable.builtin"] = { fg = colors.flamingo },
 						["@variable.builtin.css"] = { fg = colors.maroon },
 						["@lsp.type.interface"] = { fg = colors.yellow },
+						["@tag"] = { fg = colors.red },
 					}
 				end,
 				integrations = {
