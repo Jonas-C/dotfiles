@@ -1,9 +1,12 @@
 return {
 	"stevearc/conform.nvim",
 	opts = {
-		format_on_save = {
-			timeout_ms = 1000,
-		},
+		format_on_save = function(bufnr)
+			if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+				return
+			end
+			return { timeout_ms = 1000 }
+		end,
 		notify_on_error = true,
 		formatters_by_ft = {
 			lua = { "stylua" },
