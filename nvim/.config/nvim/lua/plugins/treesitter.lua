@@ -11,7 +11,6 @@ return {
 				"RRethy/nvim-treesitter-endwise",
 				ft = { "bash", "lua" },
 			},
-			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
 		config = function()
 			require("nvim-treesitter.configs").setup({
@@ -26,10 +25,6 @@ return {
 				},
 				highlight = {
 					enable = not vim.g.vscode,
-				},
-				context_commentstring = {
-					enable = true,
-					enable_autocmd = false,
 				},
 			})
 		end,
