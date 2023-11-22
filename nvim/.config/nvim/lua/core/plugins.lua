@@ -15,12 +15,14 @@ require("lazy").setup({
 		-- have outdated releases, which may break your Neovim install.
 		version = false,
 	},
+	change_detection = { notify = false },
 	performance = {
 		rtp = {
 			-- disable some rtp plugins
 			disabled_plugins = {
 				"gzip",
 				"netrwPlugin",
+				"rplugin",
 				"tarPlugin",
 				"tohtml",
 				"tutor",
