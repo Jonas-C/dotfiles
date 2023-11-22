@@ -46,12 +46,15 @@ return {
 				file_ignore_patterns = { ".git/", "./node_modules/", "venv/" },
 				mappings = {
 					i = {
-						["<esc>"] = actions.close,
+						["<esc>"] = false,
 						["<c-tab>"] = actions.move_selection_next,
 						["<c-s-tab>"] = actions.move_selection_previous,
 						["<c-j>"] = actions.move_selection_next,
 						["<c-k>"] = actions.move_selection_previous,
 						["<c-u>"] = false,
+					},
+					n = {
+						["<c-c>"] = "close",
 					},
 				},
 				prompt_prefix = "❯ ",
