@@ -50,3 +50,11 @@ vim.api.nvim_create_autocmd("CmdwinEnter", {
 		vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
 	end,
 })
+
+-- close quickfix menu after selecting choice
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = { "qf" },
+-- 	callback = function(event)
+-- 		vim.keymap.set("n", "<cr>", "<cr><cmd>close<cr>", { buffer = event.buf, silent = true })
+-- 	end,
+-- })
