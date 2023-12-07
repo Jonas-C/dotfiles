@@ -45,9 +45,14 @@ M.setup_servers = function()
 			},
 		},
 	})
+	M.server("pyright")
+	M.server("ruff-lsp")
 	M.server("eslint")
-	M.server("graphql")
 	M.server("cssls")
+	M.server("tailwindcss")
+	M.server("graphql", {
+		filetypes = { "graphql", "typescript", "typescriptreact" },
+	})
 	M.server("jsonls", {
 		on_new_config = function(new_config)
 			new_config.settings.json.schemas = new_config.settings.json.schemas or {}
