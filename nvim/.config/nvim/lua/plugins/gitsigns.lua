@@ -13,6 +13,5 @@ return {
 		},
 		current_line_blame = true,
 		sign_priority = 0,
-		_inline2 = true,
 	},
 }
