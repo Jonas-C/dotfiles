@@ -16,7 +16,8 @@ return {
 				text = "🤯",
 				highlight = "Directory",
 				text_align = "left",
-				separator = "▏",
+				-- Not showing the separator removes an awkward gap between neotree and the first buffer
+				-- separator = "▏",
 			},
 		},
 	},
