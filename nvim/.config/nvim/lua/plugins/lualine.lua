@@ -10,7 +10,7 @@ return {
 				if state == nil or state.winid == nil then
 					return ""
 				end
-				return string.rep(" ", vim.api.nvim_win_get_width(state.winid) - 1)
+				return string.rep(" ", vim.api.nvim_win_get_width(state.winid) - 2)
 			end,
 			cond = function()
 				local renderer = require("neo-tree.ui.renderer")
