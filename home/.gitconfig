@@ -1,0 +1,15 @@
+[core]
+  pager = less
+  editor = nvim
+[merge]
+  conflictstyle = diff3
+[diff]
+  colorMoved = default
+[fetch]
+  prune = true
+[pull]
+  rebase = true
+[rerere]
+  enabled = true
+[include]
+  path = ~/.gitconfig.local
