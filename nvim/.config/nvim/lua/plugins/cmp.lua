@@ -45,7 +45,9 @@ return {
 			"hrsh7th/cmp-path",
 		},
 		opts = function()
+			vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
 			local cmp = require("cmp")
+			local defaults = require("cmp.config.default")()
 
 			return {
 				completion = {
@@ -55,7 +57,7 @@ return {
 					fields = { "kind", "abbr", "menu" },
 					format = function(entry, vim_item)
 						local data = entry.completion_item.data
-						if data ~= nil and data.entryNames and data.entryNames[1] and data.entryNames[1].data then
+						if data and data.entryNames and data.entryNames[1] and data.entryNames[1].data then
 							vim_item.menu = data.entryNames[1].data.moduleSpecifier
 						end
 						local kind =
@@ -125,18 +127,7 @@ return {
 					{ name = "path" },
 				}),
 				sorting = {
-					comparators = {
-						cmp.config.compare.offset,
-						cmp.config.compare.exact,
-						cmp.config.compare.score,
-						cmp.config.compare.recently_used,
-						cmp.config.compare.kind,
-					},
-				},
-				experimental = {
-					ghost_text = {
-						hl_group = "LspCodeLens",
-					},
+					comparators = defaults.sorting,
 				},
 			}
 		end,
