@@ -52,7 +52,12 @@ eval "$(zoxide init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # I dunno what this is supposed to do, but it doesn't exist. Maybe on ARM?
 # source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
+
+if [[ "$arch" == "arm64" ]]; then
+  source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+else
+  source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
