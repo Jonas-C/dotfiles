@@ -127,7 +127,13 @@ return {
 					{ name = "path" },
 				}),
 				sorting = {
-					comparators = defaults.sorting,
+					comparators = {
+						cmp.config.compare.offset,
+						cmp.config.compare.exact,
+						cmp.config.compare.score,
+						cmp.config.compare.recently_used,
+						cmp.config.compare.kind,
+					},
 				},
 			}
 		end,
