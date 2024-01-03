@@ -63,14 +63,6 @@ M.setup_servers = function()
 		},
 	})
 
-	require("rust-tools").setup({
-		tools = {
-			inlay_hints = {
-				only_current_line = true,
-			},
-		},
-	})
-
 	require("typescript-tools").setup({
 		capabilities = M.default_capabilities(),
 		settings = {

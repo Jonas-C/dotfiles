@@ -18,7 +18,11 @@ return {
 			experimental = { pathStrict = true },
 		},
 	},
-	{ "simrat39/rust-tools.nvim" },
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^3", -- Recommended
+		ft = { "rust" },
+	},
 	{
 		"b0o/schemastore.nvim",
 		lazy = true,
