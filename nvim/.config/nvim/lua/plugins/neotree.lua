@@ -1,6 +1,6 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
-	branch = "v3.x",
+	branch = "main",
 	cond = not vim.g.vscode,
 	cmd = "Neotree",
 	dependencies = {
