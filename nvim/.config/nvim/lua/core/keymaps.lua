@@ -14,6 +14,8 @@ keymap("n", "<leader>grb", "<cmd>G reset_buffer<cr>", { desc = "Go to next hunk"
 keymap("n", "<leader>gl", "<cmd>G blame_line<cr>", { desc = "Show blame line" })
 keymap("n", "<leader>gpi", "<cmd>PackageInfoShowForce<cr>", { desc = "Show newer package versions", silent = true })
 
+keymap("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy", silent = true })
+
 -- harpoon
 keymap("n", "<leader>a", function()
 	require("harpoon.mark").add_file()
