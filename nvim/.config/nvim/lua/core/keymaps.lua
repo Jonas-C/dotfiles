@@ -15,6 +15,7 @@ keymap("n", "<leader>gl", "<cmd>G blame_line<cr>", { desc = "Show blame line" })
 keymap("n", "<leader>gpi", "<cmd>PackageInfoShowForce<cr>", { desc = "Show newer package versions", silent = true })
 
 keymap("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy", silent = true })
+keymap("n", "<leader>M", "<cmd>Mason<cr>", { desc = "Mason", silent = true })
 
 -- harpoon
 keymap("n", "<leader>a", function()
