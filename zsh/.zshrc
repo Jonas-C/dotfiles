@@ -21,7 +21,7 @@ export RIPGREP_CONFIG_PATH="$HOME/.config/.ripgreprc"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#515151"
 
 # ASDF STUFF
-. "$HOME/.asdf/asdf.sh"
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 
@@ -53,11 +53,7 @@ eval "$(zoxide init zsh)"
 # I dunno what this is supposed to do, but it doesn't exist. Maybe on ARM?
 # source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
-if [[ "$arch" == "arm64" ]]; then
-  source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
-else
-  source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
-fi
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
