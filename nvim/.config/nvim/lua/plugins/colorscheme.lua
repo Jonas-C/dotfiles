@@ -46,14 +46,14 @@ return {
 						["NeoTreeDirectoryName"] = { fg = colors.text },
 						["NeoTreeDirectoryIcon"] = { fg = colors.text },
 						["NeoTreeRootName"] = { fg = colors.text },
-						["@constructor.tsx"] = { fg = colors.yellow },
 						["@parameter"] = { fg = colors.text },
 						["@punctuation.bracket"] = { fg = colors.yellow },
 						["@punctuation.special"] = { fg = colors.sapphire },
 						["@variable.builtin"] = { fg = colors.flamingo },
 						["@variable.builtin.css"] = { fg = colors.maroon },
 						["@lsp.type.interface"] = { fg = colors.yellow },
-						["@tag"] = { fg = colors.red },
+						["@tag.builtin"] = { fg = colors.red },
+						["@tag"] = { fg = colors.yellow },
 					}
 				end,
 				integrations = {
