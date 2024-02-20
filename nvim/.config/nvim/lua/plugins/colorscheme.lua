@@ -54,6 +54,7 @@ return {
 						["@lsp.type.interface"] = { fg = colors.yellow },
 						["@tag.builtin"] = { fg = colors.red },
 						["@tag"] = { fg = colors.yellow },
+						["@tag.attribute.tsx"] = { fg = colors.mauve },
 					}
 				end,
 				integrations = {
