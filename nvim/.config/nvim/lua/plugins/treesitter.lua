@@ -1,22 +1,14 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		build = function()
-			pcall(require("nvim-treesitter.install").update({ with_sync = true }))
-		end,
+		build = ":TSUpdate",
 		version = false,
 		event = { "BufReadPost", "BufNewFile" },
 		opts = {
 			ensure_installed = "all",
-			indent = {
-				enable = false,
-			},
-			autotag = {
-				enable = true,
-			},
-			highlight = {
-				enable = not vim.g.vscode,
-			},
+			indent = { enable = true },
+			autotag = { enable = true },
+			highlight = { enable = true },
 		},
 		config = function(_, opts)
 			require("nvim-treesitter.configs").setup(opts)
