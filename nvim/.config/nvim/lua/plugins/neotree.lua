@@ -67,6 +67,11 @@ return {
 				window = {
 					mappings = {
 						["f"] = "telescope_find",
+						["O"] = {
+							function(state)
+								vim.ui.open(state.tree:get_node().path)
+							end,
+						},
 					},
 				},
 				hijack_netrw_behavior = "open_current",
