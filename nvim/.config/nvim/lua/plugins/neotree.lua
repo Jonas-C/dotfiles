@@ -3,7 +3,6 @@ return {
 	branch = "main",
 	cmd = "Neotree",
 	dependencies = {
-		"nvim-tree/nvim-web-devicons",
 		"MunifTanjim/nui.nvim",
 	},
 	lazy = false,

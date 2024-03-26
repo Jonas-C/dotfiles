@@ -3,7 +3,6 @@ return {
 	"nvim-telescope/telescope.nvim",
 	cmd = { "Telescope" },
 	dependencies = {
-		"nvim-tree/nvim-web-devicons",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
 	version = false,
