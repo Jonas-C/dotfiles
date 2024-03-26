@@ -28,7 +28,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 return {
 	"akinsho/toggleterm.nvim",
-	cond = not vim.g.vscode,
 	event = "VeryLazy",
 	opts = {
 		direction = "float",

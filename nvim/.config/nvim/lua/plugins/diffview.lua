@@ -12,7 +12,6 @@ return {
 	"sindrets/diffview.nvim",
 	version = false,
 	lazy = true,
-	cond = not vim.g.vscode,
 	keys = {
 		{ "<Leader>gg", "<cmd>DiffviewToggle<cr>", { desc = "Show git diff" } },
 	},

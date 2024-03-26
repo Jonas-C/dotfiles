@@ -1,6 +1,5 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	cond = not vim.g.vscode,
 	event = "VeryLazy",
 	config = function()
 		local neo_tree_shift = {

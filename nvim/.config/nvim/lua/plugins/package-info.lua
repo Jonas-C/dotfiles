@@ -7,7 +7,6 @@ vim.api.nvim_set_keymap(
 
 return {
 	"vuki656/package-info.nvim",
-	cond = not vim.g.vscode,
 	lazy = false,
 	version = false,
 	config = function()

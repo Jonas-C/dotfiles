@@ -2,7 +2,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		event = "VeryLazy",
-		cond = not vim.g.vscode,
 		dependencies = {
 			"pmizio/typescript-tools.nvim",
 			"nvimtools/none-ls.nvim",

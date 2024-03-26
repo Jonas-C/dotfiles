@@ -1,7 +1,6 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "main",
-	cond = not vim.g.vscode,
 	cmd = "Neotree",
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",

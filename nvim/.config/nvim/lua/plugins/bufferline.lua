@@ -1,7 +1,6 @@
 return {
 	"akinsho/bufferline.nvim",
 	event = "VeryLazy",
-	cond = not vim.g.vscode,
 	opts = {
 		diagnostics = "nvim_lsp",
 		diagnostics_indicator = function(count)
