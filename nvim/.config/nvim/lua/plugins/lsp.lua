@@ -26,5 +26,5 @@ return {
 		"b0o/schemastore.nvim",
 		lazy = true,
 	},
-	{ "dmmulroy/ts-error-translator.nvim", config = true },
+	{ "dmmulroy/ts-error-translator.nvim", lazy = true, config = true },
 }
