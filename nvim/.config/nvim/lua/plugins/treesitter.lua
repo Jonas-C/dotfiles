@@ -6,20 +6,20 @@ return {
 		end,
 		version = false,
 		event = { "BufReadPost", "BufNewFile" },
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = "all",
-				ignore_install = { "mlir" },
-				indent = {
-					enable = false,
-				},
-				autotag = {
-					enable = true,
-				},
-				highlight = {
-					enable = not vim.g.vscode,
-				},
-			})
+		opts = {
+			ensure_installed = "all",
+			indent = {
+				enable = false,
+			},
+			autotag = {
+				enable = true,
+			},
+			highlight = {
+				enable = not vim.g.vscode,
+			},
+		},
+		config = function(_, opts)
+			require("nvim-treesitter.configs").setup(opts)
 		end,
 	},
 	{
