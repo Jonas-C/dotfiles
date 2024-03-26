@@ -6,12 +6,6 @@ return {
 		end,
 		version = false,
 		event = { "BufReadPost", "BufNewFile" },
-		dependencies = {
-			{
-				"RRethy/nvim-treesitter-endwise",
-				ft = { "bash", "lua" },
-			},
-		},
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = "all",
@@ -19,7 +13,6 @@ return {
 				indent = {
 					enable = false,
 				},
-				endwise = { enable = true },
 				autotag = {
 					enable = true,
 				},
@@ -32,6 +25,6 @@ return {
 	{
 		"windwp/nvim-ts-autotag",
 		event = "InsertEnter",
-		opts = {},
+		config = true,
 	},
 }
