@@ -16,7 +16,6 @@ return {
 	keys = {
 		{ "<Leader>gg", "<cmd>DiffviewToggle<cr>", { desc = "Show git diff" } },
 	},
-	dependencies = { "nvim-lua/plenary.nvim" },
 	opts = {
 		enhanced_diff_hl = true,
 	},

@@ -4,7 +4,6 @@ return {
 	cond = not vim.g.vscode,
 	cmd = "Neotree",
 	dependencies = {
-		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons",
 		"MunifTanjim/nui.nvim",
 	},

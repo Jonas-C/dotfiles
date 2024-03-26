@@ -1,6 +1,6 @@
 return {
 	"NeogitOrg/neogit",
-	dependencies = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim" },
+	dependencies = { "sindrets/diffview.nvim" },
 	lazy = true,
 	keys = {
 		{ "<leader>x", "<cmd>Neogit<cr>", { desc = "Open Neogit" } },
