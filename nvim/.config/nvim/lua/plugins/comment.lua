@@ -1,30 +1,21 @@
 return {
-	"numToStr/Comment.nvim",
-	event = "BufReadPost",
-	dependencies = {
+	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
+		lazy = true,
 		opts = {
 			enable_autocmd = false,
 		},
 	},
-	config = function()
-		require("Comment").setup({
-			padding = true,
-			sticky = true,
-			toggler = {
-				line = "gcc",
-				block = "gbc",
+	{
+		"echasnovski/mini.comment",
+		event = "VeryLazy",
+		opts = {
+			options = {
+				custom_commentstring = function()
+					return require("ts_context_commentstring.internal").calculate_commentstring()
+						or vim.bo.commentstring
+				end,
 			},
-			opleader = {
-				line = "gc",
-				block = "gb",
-			},
-			mappings = {
-				basic = true,
-				extra = true,
-				extended = false,
-			},
-			pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-		})
-	end,
+		},
+	},
 }
