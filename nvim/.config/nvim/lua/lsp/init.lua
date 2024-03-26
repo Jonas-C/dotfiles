@@ -86,6 +86,8 @@ M.setup_servers = function()
 				if vim.tbl_islist(result) then
 					local ignored_paths = {
 						"react/index.d.ts",
+						"components/createStyleContext.tsx",
+						"styled-system/types/jsx.d.ts",
 					}
 
 					for key, value in ipairs(result) do
