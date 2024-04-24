@@ -1,20 +1,8 @@
 local M = {}
 local utils = require("util")
 
-local mason = require("mason-registry")
-
 M.default_capabilities = function()
 	return require("cmp_nvim_lsp").default_capabilities()
-end
-
-M.get_install_path = function(package)
-	local pkg = mason.get_package(package)
-	return pkg.get_install_path(pkg)
-end
-
-M.get_ts_pkg = function(package)
-	local path = M.get_install_path(package)
-	return { name = package, location = path }
 end
 
 M.server = function(server, config)
