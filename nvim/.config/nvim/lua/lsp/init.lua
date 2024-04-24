@@ -83,7 +83,7 @@ M.setup_servers = function()
 			-- show the first one. This prevents many times where going to definition
 			-- opens a quickfix list when it really doesn't need to.
 			["textDocument/definition"] = function(_, result, ...)
-				if vim.tbl_islist(result) then
+				if vim.islist(result) then
 					local ignored_paths = {
 						"react/index.d.ts",
 						"components/createStyleContext.tsx",
