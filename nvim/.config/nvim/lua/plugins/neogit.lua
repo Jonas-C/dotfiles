@@ -7,9 +7,6 @@ return {
 		{ "<leader>x", "<cmd>Neogit<cr>", { desc = "Open Neogit" } },
 	},
 	opts = {
-		integrations = {
-			diffview = true,
-		},
 		mappings = {
 			finder = {
 				["<c-j>"] = "Next",
