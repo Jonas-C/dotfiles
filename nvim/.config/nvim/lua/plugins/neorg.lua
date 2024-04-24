@@ -1,6 +1,7 @@
 return {
 	"nvim-neorg/neorg",
 	ft = "norg",
+	dependencies = { "luarocks.nvim" },
 	opts = {
 		load = {
 			["core.defaults"] = {}, -- Loads default behaviour
