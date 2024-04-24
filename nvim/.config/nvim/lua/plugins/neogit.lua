@@ -1,6 +1,5 @@
 return {
 	"NeogitOrg/neogit",
-	dependencies = { "sindrets/diffview.nvim" },
 	branch = "nightly",
 	lazy = true,
 	keys = {
