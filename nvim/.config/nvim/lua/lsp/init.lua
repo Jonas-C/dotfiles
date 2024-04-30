@@ -34,7 +34,7 @@ M.setup_servers = function()
 		},
 	})
 	M.server("pyright")
-	M.server("ruff-lsp")
+	-- TODO: Investigate why this fails M.server("ruff-lsp")
 	M.server("eslint")
 	M.server("cssls")
 	M.server("tailwindcss")
