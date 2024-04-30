@@ -23,6 +23,8 @@ return {
 		require("neo-tree").setup({
 			enable_normal_mode_for_inputs = true,
 			enable_diagnostics = true,
+			hide_root_node = true,
+			retain_hidden_root_indent = true,
 			default_component_configs = {
 				file_size = { enabled = false },
 				type = { enabled = false },
