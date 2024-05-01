@@ -13,7 +13,7 @@ return {
 			{
 				filetype = "neo-tree",
 				text = "🤯",
-				highlight = "Directory",
+				highlight = "NeoTreeNormal",
 				text_align = "left",
 				-- Not showing the separator removes an awkward gap between neotree and the first buffer
 				-- separator = "▏",
