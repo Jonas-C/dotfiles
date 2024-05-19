@@ -13,6 +13,7 @@ fi
 
 bindkey -v
 export NVIM_APPNAME="nvim"
+export PATH=/opt/homebrew/bin:$PATH
 export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
 
 export RIPGREP_CONFIG_PATH="$HOME/.config/.ripgreprc"
@@ -38,7 +39,7 @@ bindkey '^ ' autosuggest-accept
 for file in $HOME/.config/zsh/*; do
     source "$file"
 done
-alias vim="env TERM=$TERM CC=gcc-13 nvim"
+alias vim="env TERM=$TERM nvim"
 alias home="cd $HOME"
 alias reload="source ~/.zshrc"
 alias tmuxconf='vim ~/.config/tmux/tmux.conf'
@@ -57,3 +58,4 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(mise activate zsh)"
