@@ -67,6 +67,9 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 map("v", "p", '"_dP')
 
+map("n", "<leader>sp", "<C-W>v", { desc = "Split window vertically" })
+map("n", "<leader>sv", "<C-W>s", { desc = "Split window vertically" })
+
 vim.cmd("cabb Wq wq")
 vim.cmd("cabb Qa qa")
 vim.cmd("cabb WQ wq")
