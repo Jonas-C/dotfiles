@@ -7,7 +7,6 @@ return {
 		opts = {
 			ensure_installed = "all",
 			indent = { enable = true },
-			autotag = { enable = true },
 			highlight = { enable = true },
 		},
 		config = function(_, opts)
