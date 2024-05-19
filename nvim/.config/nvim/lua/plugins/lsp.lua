@@ -5,6 +5,7 @@ return {
 		dependencies = {
 			"pmizio/typescript-tools.nvim",
 			"nvimtools/none-ls.nvim",
+			"yioneko/nvim-vtsls",
 		},
 		config = function()
 			return require("lsp").setup()
@@ -19,7 +20,6 @@ return {
 	},
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^3", -- Recommended
 		ft = { "rust" },
 	},
 	{
