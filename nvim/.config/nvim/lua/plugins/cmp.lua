@@ -12,6 +12,7 @@ return {
 		opts = function()
 			vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
 			local cmp = require("cmp")
+			local lspkind = require("lspkind")
 
 			return {
 				completion = {
@@ -19,17 +20,26 @@ return {
 				},
 				formatting = {
 					fields = { "kind", "abbr", "menu" },
-					format = function(entry, vim_item)
-						local data = entry.completion_item.data
-						if data and data.entryNames and data.entryNames[1] and data.entryNames[1].data then
-							vim_item.menu = data.entryNames[1].data.moduleSpecifier
-						end
-						local kind =
-							require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
-						local strings = vim.split(kind.kind, "%s", { trimempty = true })
-						kind.kind = " " .. (strings[1] or "") .. " "
-						return vim_item
-					end,
+					format = lspkind.cmp_format({
+						mode = "symbol",
+						maxwidth = 50,
+						ellipsis_char = "...",
+						show_labelDetails = true,
+					}),
+					-- format = function(entry, vim_item)
+					-- 	-- This used to be a way to figure out which package a completion item was from.
+					-- 	-- VTSLS does not require this, but I'll keep it here in case I every switch back to typescript-tools.
+					-- 	-- local data = entry.completion_item.data
+					-- 	-- if data and data.entryNames and data.entryNames[1] and data.entryNames[1].data then
+					-- 	-- 	vim_item.menu = data.entryNames[1].data.moduleSpecifier
+					-- 	-- end
+					--
+					-- 	local kind =
+					-- 		require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+					-- 	local strings = vim.split(kind.kind, "%s", { trimempty = true })
+					-- 	kind.kind = " " .. (strings[1] or "") .. " "
+					-- 	return vim_item
+					-- end,
 				},
 				window = {
 					completion = cmp.config.window.bordered(),
