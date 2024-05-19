@@ -26,5 +26,5 @@ return {
 		lazy = true,
 	},
 	{ "dmmulroy/ts-error-translator.nvim", lazy = true, config = true },
-	{ "pmizio/typescript-tools.nvim", enabled = false },
+	{ "pmizio/typescript-tools.nvim", keys = {} },
 }
