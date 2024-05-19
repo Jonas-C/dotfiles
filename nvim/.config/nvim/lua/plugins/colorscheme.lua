@@ -68,6 +68,7 @@ return {
 					neogit = true,
 					noice = true,
 					semantic_tokens = true,
+					diffview = true,
 					telescope = {
 						enabled = true,
 					},
