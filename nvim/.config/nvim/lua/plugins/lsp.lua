@@ -3,7 +3,6 @@ return {
 		"neovim/nvim-lspconfig",
 		event = "VeryLazy",
 		dependencies = {
-			"pmizio/typescript-tools.nvim",
 			"nvimtools/none-ls.nvim",
 			"yioneko/nvim-vtsls",
 		},
@@ -27,4 +26,5 @@ return {
 		lazy = true,
 	},
 	{ "dmmulroy/ts-error-translator.nvim", lazy = true, config = true },
+	{ "pmizio/typescript-tools.nvim", enabled = false },
 }
