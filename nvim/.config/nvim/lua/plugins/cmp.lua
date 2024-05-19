@@ -55,7 +55,14 @@ return {
 					["<C-f>"] = cmp.mapping.scroll_docs(-4),
 					-- ["<C-Space>"] = cmp.mapping.complete(),
 					["<C-e>"] = cmp.mapping.abort(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+					["<CR>"] = function(fallback)
+						if cmp.core.view:visible() or vim.fn.pumvisible() == 1 then
+							if cmp.confirm({ select = true }) then -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+								return
+							end
+						end
+						return fallback()
+					end,
 				}),
 				sources = cmp.config.sources({
 					{
