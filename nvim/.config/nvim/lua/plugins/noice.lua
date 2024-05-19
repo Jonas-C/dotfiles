@@ -9,10 +9,6 @@ return {
 			},
 		},
 		lsp = {
-			progress = {
-				-- This messes up formatting at times
-				enabled = false,
-			},
 			hover = {
 				silent = true,
 			},
