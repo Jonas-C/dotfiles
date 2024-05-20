@@ -1,8 +1,3 @@
-function _G.set_terminal_keymaps()
-	local opts = { buffer = 0 }
-	vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
-end
-
 -- Close Terminal and open buffer in "normal window".
 -- https://github.com/akinsho/toggleterm.nvim/issues/116
 local function go_to_file()
@@ -20,12 +15,12 @@ vim.api.nvim_create_autocmd("TermOpen", {
 	pattern = "term://*toggleterm#*",
 	callback = function()
 		vim.keymap.set("n", "gf", go_to_file, { buffer = true })
+		-- Normal mode in terminal
+		vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], { buffer = true })
 	end,
 	group = "ToggleTerm",
 })
 
--- if you only want these mappings for toggle term use term://*toggleterm#* instead
-vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 return {
 	"akinsho/toggleterm.nvim",
 	event = "VeryLazy",
