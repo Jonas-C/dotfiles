@@ -1,6 +1,5 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
-	branch = "main",
 	cmd = "Neotree",
 	lazy = false,
 	keys = {
