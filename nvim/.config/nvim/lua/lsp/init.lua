@@ -27,6 +27,7 @@ end
 M.setup_servers = function()
 	M.server("lua_ls")
 	M.server("biome")
+	M.server("html")
 	M.server("yamlls", {
 		settings = {
 			yaml = {
