@@ -37,7 +37,13 @@ M.setup_servers = function()
 	})
 	M.server("pyright")
 	-- TODO: Investigate why this fails M.server("ruff-lsp")
-	M.server("eslint")
+	M.server("eslint", {
+		settings = {
+			experimental = {
+				useFlatConfig = nil, -- option not in the latest eslint-lsp
+			},
+		},
+	})
 	M.server("cssls")
 	M.server("tailwindcss")
 	M.server("graphql", {
