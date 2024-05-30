@@ -29,6 +29,7 @@ return {
 			["handlebars"] = { { "prettierd", "prettier" } },
 			["python"] = { "ruff-lsp" },
 			["rust"] = { "rustfmt" },
+			["go"] = { "goimports", "gofumpt" },
 		},
 		config = function(opts)
 			require("conform").setup(opts)

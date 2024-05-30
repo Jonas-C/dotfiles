@@ -154,6 +154,8 @@ M.setup_servers = function()
 	-- 		end,
 	-- 	},
 	-- })
+
+	M.server("gopls")
 end
 
 M.setup = function()
