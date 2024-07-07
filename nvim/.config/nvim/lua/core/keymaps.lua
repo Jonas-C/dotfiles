@@ -14,6 +14,8 @@ map("n", "<leader>grb", "<cmd>G reset_buffer<cr>", { desc = "Go to next hunk" })
 map("n", "<leader>gl", "<cmd>G blame_line<cr>", { desc = "Show blame line" })
 map("n", "<leader>gpi", "<cmd>PackageInfoShowForce<cr>", { desc = "Show newer package versions", silent = true })
 
+map("n", "<leader>uf", "<cmd>FormatToggle<cr>", { desc = "Toggle format on save" })
+
 map("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy", silent = true })
 map("n", "<leader>M", "<cmd>Mason<cr>", { desc = "Mason", silent = true })
 
