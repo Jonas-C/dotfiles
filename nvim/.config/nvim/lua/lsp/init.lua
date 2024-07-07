@@ -180,7 +180,6 @@ M.setup = function()
 	})
 	require("lsp.handlers").register_handlers()
 	require("lsp.autocmd")
-	require("neodev").setup({})
 	M.setup_servers()
 end
 
