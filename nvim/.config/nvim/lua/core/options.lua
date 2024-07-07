@@ -52,4 +52,6 @@ opt.mouse = "a"
 opt.cmdheight = 1
 opt.pumheight = 10
 opt.laststatus = 2
+opt.undofile = true
+opt.undolevels = 10000
 opt.updatetime = 200
