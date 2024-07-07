@@ -78,7 +78,9 @@ M.setup_servers = function()
 				},
 				autoUseWorkspaceTsdk = true,
 				experimental = {
-					enableServerSideFuzzyMatch = true,
+					completion = {
+						enableServerSideFuzzyMatch = true,
+					},
 				},
 			},
 		},
