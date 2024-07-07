@@ -11,10 +11,12 @@ return {
 		end,
 	},
 	{
-		"folke/neodev.nvim",
-		lazy = true,
+		"folke/lazydev.nvim",
+		ft = "lua",
 		opts = {
-			experimental = { pathStrict = true },
+			library = {
+				"luvit-meta/library",
+			},
 		},
 	},
 	{
