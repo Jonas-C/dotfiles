@@ -40,7 +40,8 @@ return {
 				},
 			},
 			defaults = {
-				file_ignore_patterns = { ".git/", "./node_modules/", "venv/" },
+				-- file_ignore_patterns = { ".git/", "./node_modules/", "venv/", ".har$", "styled-system/" },
+				file_ignore_patterns = { ".git/", "./node_modules/", "venv/", ".har$", "styled-system/" },
 				mappings = {
 					i = {
 						["<esc>"] = false,
