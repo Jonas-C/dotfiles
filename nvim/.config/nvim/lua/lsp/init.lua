@@ -39,6 +39,13 @@ M.setup_servers = function()
 	-- TODO: Investigate why this fails M.server("ruff-lsp")
 	M.server("eslint")
 	M.server("cssls")
+	M.server("volar", {
+		init_options = {
+			vue = {
+				hybridMode = true,
+			},
+		},
+	})
 	M.server("tailwindcss")
 	M.server("graphql", {
 		filetypes = { "graphql", "typescript", "typescriptreact" },
@@ -61,6 +68,7 @@ M.setup_servers = function()
 			"typescript",
 			"typescriptreact",
 			"typescript.tsx",
+			"vue",
 		},
 		settings = {
 			typescript = {
@@ -79,6 +87,13 @@ M.setup_servers = function()
 						{
 							name = "@styled/typescript-styled-plugin",
 							location = os.getenv("HOME") .. "/npm-cache/lib/node_modules/",
+							enableForWorkspaceTypeScriptVersions = true,
+						},
+						{
+							name = "@vue/typescript-plugin",
+							location = os.getenv("HOME") .. "/npm-cache/lib/node_modules/",
+							languages = { "vue" },
+							configNamespace = "typescript",
 							enableForWorkspaceTypeScriptVersions = true,
 						},
 					},
