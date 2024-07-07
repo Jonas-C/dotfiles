@@ -41,6 +41,7 @@ opt.signcolumn = "yes"
 opt.hidden = true
 opt.ignorecase = true
 opt.timeoutlen = 300
+opt.jumpoptions = "view"
 opt.smartcase = true
 opt.smartindent = true
 opt.number = true
@@ -54,3 +55,7 @@ opt.laststatus = 2
 opt.undofile = true
 opt.undolevels = 10000
 opt.updatetime = 200
+-- TODO: Spell checking does not work in neogit commit messages. Tracked in #1305
+opt.spell = true
+opt.spelllang = { "en" }
+opt.spelloptions = "camel,noplainbuffer"
