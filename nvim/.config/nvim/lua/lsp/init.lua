@@ -54,7 +54,14 @@ M.setup_servers = function()
 	})
 
 	M.server("vtsls", {
-		cmd = { "vtsls", "--stdio", "--globalPlugins", "@styled/typescript-styled-plugin" },
+		filetypes = {
+			"javascript",
+			"javascriptreact",
+			"javascript.jsx",
+			"typescript",
+			"typescriptreact",
+			"typescript.tsx",
+		},
 		settings = {
 			typescript = {
 				preferences = {
