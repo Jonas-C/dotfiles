@@ -4,7 +4,6 @@ return {
 		event = "VeryLazy",
 		dependencies = {
 			"nvimtools/none-ls.nvim",
-			"yioneko/nvim-vtsls",
 		},
 		config = function()
 			return require("lsp").setup()
