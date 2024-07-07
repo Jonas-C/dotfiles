@@ -17,7 +17,6 @@ opt.grepprg = "rg --vimgrep"
 opt.pumblend = 10
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.wildmode = "longest:full,full"
-opt.showmode = false
 
 opt.relativenumber = true
 opt.termguicolors = true
