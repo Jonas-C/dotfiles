@@ -31,7 +31,21 @@ return {
 			sections = {
 				lualine_a = {},
 				lualine_b = { neo_tree_shift, "branch" },
-				lualine_c = { "diff" },
+				lualine_c = {
+					{
+						"diff",
+						source = function()
+							local gitsigns = vim.b.gitsigns_status_dict
+							if gitsigns then
+								return {
+									added = gitsigns.added,
+									modified = gitsigns.changed,
+									removed = gitsigns.removed,
+								}
+							end
+						end,
+					},
+				},
 				lualine_x = {},
 				lualine_y = {},
 				lualine_z = { "filename" },
