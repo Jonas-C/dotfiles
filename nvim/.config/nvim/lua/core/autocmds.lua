@@ -9,8 +9,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, { command = "G attach" })
-
 -- Do not automatically comment newlines. Caused by ftplugin
 vim.api.nvim_create_autocmd("FileType", { command = "set formatoptions-=o" })
 
