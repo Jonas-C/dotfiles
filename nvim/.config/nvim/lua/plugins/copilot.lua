@@ -4,6 +4,10 @@ return {
 	event = "InsertEnter",
 	config = function()
 		require("copilot").setup({
+			filetypes = {
+				["grug-far"] = false,
+				["grug-far-history"] = false,
+			},
 			suggestion = {
 				auto_trigger = true,
 				keymap = {
