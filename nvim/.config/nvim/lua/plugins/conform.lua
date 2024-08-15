@@ -30,6 +30,7 @@ return {
 			["python"] = { "ruff-lsp" },
 			["rust"] = { "rustfmt" },
 			["go"] = { "goimports", "gofumpt" },
+			["toml"] = { "taplo" },
 		},
 		config = function(opts)
 			require("conform").setup(opts)
