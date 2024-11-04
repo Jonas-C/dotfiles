@@ -24,7 +24,6 @@ opt.termguicolors = true
 opt.fileencoding = "utf-8"
 opt.autoread = true
 opt.autowrite = true
-opt.wrap = true
 opt.backup = false
 opt.swapfile = false
 opt.hlsearch = true
