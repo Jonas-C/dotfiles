@@ -71,3 +71,11 @@ vim.cmd("cabb QA qa")
 vim.cmd("cabb QA1 qa!")
 vim.cmd("cabb Qa1 qa!")
 vim.cmd("cabb qa1 qa!")
+
+-- Yank the line on `dd` only if it is non-empty
+vim.keymap.set("n", "dd", function()
+	if vim.fn.getline("."):match("^%s*$") then
+		return '"_dd'
+	end
+	return "dd"
+end, { expr = true })
