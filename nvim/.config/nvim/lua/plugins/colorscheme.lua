@@ -69,6 +69,7 @@ return {
 					noice = true,
 					semantic_tokens = true,
 					diffview = true,
+					blink_cmp = true,
 					telescope = {
 						enabled = true,
 					},
