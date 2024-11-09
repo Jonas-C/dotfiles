@@ -11,6 +11,14 @@ map("n", "<leader>uf", "<cmd>FormatToggle<cr>", { desc = "Toggle format on save"
 map("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy", silent = true })
 map("n", "<leader>M", "<cmd>Mason<cr>", { desc = "Mason", silent = true })
 
+map("n", "<D-w>", function()
+	Snacks.bufdelete()
+end, { desc = "Delete Buffer" })
+
+map("n", "<M-w>", function()
+	Snacks.bufdelete()
+end, { desc = "Delete Buffer" })
+
 -- harpoon
 map("n", "<leader>a", function()
 	require("harpoon.mark").add_file()
