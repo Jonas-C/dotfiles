@@ -19,6 +19,9 @@ map("n", "<M-w>", function()
 	Snacks.bufdelete()
 end, { desc = "Delete Buffer" })
 
+map("n", "<D-W>", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
+map("n", "<M-W>", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
+
 -- harpoon
 map("n", "<leader>a", function()
 	require("harpoon.mark").add_file()
