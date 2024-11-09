@@ -8,6 +8,9 @@ map("n", "<leader>gpi", "<cmd>PackageInfoShowForce<cr>", { desc = "Show newer pa
 
 map("n", "<leader>uf", "<cmd>FormatToggle<cr>", { desc = "Toggle format on save" })
 
+-- highlights under cursor
+map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
+
 map("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy", silent = true })
 map("n", "<leader>M", "<cmd>Mason<cr>", { desc = "Mason", silent = true })
 
