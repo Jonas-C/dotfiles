@@ -10,7 +10,7 @@ return {
 			timeout = 3000,
 		},
 		-- quickfile = { enabled = false },
-		-- statuscolumn = { enabled = false },
+
 		-- words = { enabled = false },
 	},
 
