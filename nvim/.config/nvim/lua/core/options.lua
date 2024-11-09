@@ -15,7 +15,6 @@ opt.fillchars = {
 opt.completeopt = "menu,menuone,noselect"
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
-opt.pumblend = 10
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.wildmode = "longest:full,full"
 
