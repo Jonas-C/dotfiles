@@ -15,7 +15,6 @@ return {
 		{ "<leader>f", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
 		{ "<leader>d", "<cmd>Telescope find_files<cr>", desc = "Find files" },
 		{ "<leader>gf", "<cmd>Telescope git_status<cr>", desc = "Find files" },
-		{ "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Show git branches" },
 		{ "<leader>re", "<cmd>Telescope resume<cr>", desc = "Resume previous Telescope session" },
 		{ "zf", "<cmd>Telescope spell_suggest<cr>", desc = "Fix spelling errors" },
 		{
