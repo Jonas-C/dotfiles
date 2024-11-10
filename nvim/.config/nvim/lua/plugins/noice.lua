@@ -1,11 +1,24 @@
 return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
-	enabled = not vim.g.vscode,
+	enabled = true,
 	opts = {
-		views = {
-			notify = {
-				enabled = false,
+
+		routes = {
+			{
+				filter = {
+					event = "msg_show",
+					any = {
+						{ find = "%d+L, %d+B" },
+						{ find = "; after #%d+" },
+						{ find = "; before #%d+" },
+					},
+				},
+				opts = { skip = true },
+			},
+			{
+				view = "notify",
+				filter = { event = "msg_showmode" },
 			},
 		},
 		lsp = {
@@ -15,6 +28,7 @@ return {
 			override = {
 				["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 				["vim.lsp.util.stylize_markdown"] = true,
+				-- TODO: Disable this when switching off nvim-cmp
 				["cmp.entry.get_documentation"] = true,
 			},
 		},

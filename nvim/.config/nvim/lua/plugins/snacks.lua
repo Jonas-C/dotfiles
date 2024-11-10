@@ -4,11 +4,6 @@ return {
 	lazy = false,
 	enabled = true,
 	opts = {
-		-- bigfile = { enabled = true },
-		notifier = {
-			enabled = false,
-			timeout = 3000,
-		},
 		-- quickfile = { enabled = false },
 
 		-- words = { enabled = false },
@@ -21,6 +16,22 @@ return {
 				Snacks.gitbrowse()
 			end,
 			desc = "Git Blame Line",
+		},
+		{
+			"]]",
+			function()
+				Snacks.words.jump(vim.v.count1)
+			end,
+			desc = "Next Reference",
+			mode = { "n", "t" },
+		},
+		{
+			"[[",
+			function()
+				Snacks.words.jump(-vim.v.count1)
+			end,
+			desc = "Prev Reference",
+			mode = { "n", "t" },
 		},
 	},
 }
