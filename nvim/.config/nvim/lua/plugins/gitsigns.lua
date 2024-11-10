@@ -15,7 +15,9 @@ return {
 			map("n", "<leader>ga", gitsigns.stage_hunk, { desc = "Go to next hunk" })
 			map("n", "<leader>grh", gitsigns.reset_hunk, { desc = "Go to next hunk" })
 			map("n", "<leader>grb", gitsigns.reset_buffer, { desc = "Go to next hunk" })
-			map("n", "<leader>gl", gitsigns.blame_line, { desc = "Show blame line" })
+			map("n", "<leader>guh", gitsigns.undo_stage_hunk, { desc = "Go to next hunk" })
+			map("n", "<leader>gbl", gitsigns.blame_line, { desc = "Show blame line" })
+			map("n", "<leader>gbb", gitsigns.blame, { desc = "Show blame buffer" })
 		end,
 		signs = {
 			add = { text = "▎" },
