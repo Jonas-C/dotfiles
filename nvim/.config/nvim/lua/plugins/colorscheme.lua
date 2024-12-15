@@ -70,6 +70,7 @@ return {
 					semantic_tokens = true,
 					diffview = true,
 					blink_cmp = true,
+					snacks = true,
 					telescope = {
 						enabled = true,
 					},
