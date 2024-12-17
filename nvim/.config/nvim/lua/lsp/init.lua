@@ -1,17 +1,9 @@
 local M = {}
 local utils = require("util")
 
-M.default_capabilities = function()
-	return require("cmp_nvim_lsp").default_capabilities()
-end
-
 M.server = function(server, config)
 	config = config or {}
-
-	if config.capabilities == nil then
-		config.capabilities = M.default_capabilities()
-	end
-
+	config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
 	require("lspconfig")[server].setup(config)
 end
 

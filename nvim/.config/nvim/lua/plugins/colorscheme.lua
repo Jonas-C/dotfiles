@@ -55,10 +55,17 @@ return {
 						["@tag.builtin"] = { fg = colors.red },
 						["@tag"] = { fg = colors.yellow },
 						["@tag.attribute.tsx"] = { fg = colors.mauve },
+						["BlinkCmpDoc"] = { bg = colors.base },
+						["BlinkCmpDocBorder"] = { bg = colors.base, fg = colors.surface0 },
+						["BlinkCmpDocSeparator"] = { fg = colors.surface0 },
+						["BlinkCmpMenu"] = { bg = colors.base },
+						["BlinkCmpMenuBorder"] = { bg = colors.base, fg = colors.surface0 },
+						["BlinkCmpLabelDescription"] = { fg = colors.text },
+						["BlinkCmpLabelMatch"] = { fg = colors.peach },
+						["BlinkCmpLabel"] = { fg = colors.text },
 					}
 				end,
 				integrations = {
-					cmp = true,
 					harpoon = true,
 					gitsigns = true,
 					nvimtree = true,
