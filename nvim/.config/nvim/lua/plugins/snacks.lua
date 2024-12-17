@@ -28,7 +28,7 @@ return {
 			function()
 				Snacks.gitbrowse()
 			end,
-			desc = "Git Blame Line",
+			desc = "Open git repo",
 		},
 		{
 			"]]",
