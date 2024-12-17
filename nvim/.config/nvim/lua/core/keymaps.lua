@@ -25,23 +25,6 @@ end, { desc = "Delete Buffer" })
 map("n", "<D-W>", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
 map("n", "<M-W>", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
 
--- harpoon
-map("n", "<leader>a", function()
-	require("harpoon.mark").add_file()
-end, { desc = "Add a file to Harpoon", silent = true })
-
-map("n", "<leader>h", function()
-	require("harpoon.ui").toggle_quick_menu()
-end, { desc = "Show Harpoon marks", silent = true })
-
-map("n", "<leader>n", function()
-	require("harpoon.ui").nav_next()
-end, { desc = "Go to previous Harpoon mark", silent = true })
-
-map("n", "<leader>p", function()
-	require("harpoon.ui").nav_next()
-end, { desc = "Go to previous Harpoon mark", silent = true })
-
 -- Down is really the next line
 map("n", "j", "gj")
 map("n", "k", "gk")
