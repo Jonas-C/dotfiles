@@ -63,6 +63,8 @@ return {
 						["BlinkCmpLabelDescription"] = { fg = colors.text },
 						["BlinkCmpLabelMatch"] = { fg = colors.peach },
 						["BlinkCmpLabel"] = { fg = colors.text },
+						["SnacksIndent"] = { fg = colors.surface0 },
+						["SnacksIndentScope"] = { fg = colors.sky },
 					}
 				end,
 				integrations = {

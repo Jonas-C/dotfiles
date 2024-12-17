@@ -7,8 +7,19 @@ return {
 		bigfile = { enabled = true },
 		notifier = { enabled = true },
 		quickfile = { enabled = true },
-		statuscolumn = { enabled = true },
+		statuscolumn = {
+			-- TODO: Disable this for now. Need to figure out whether I want the extra spacing to the right of the statusline.
+			enabled = false,
+		},
 		words = { enabled = true },
+		indent = {
+			enabled = true,
+			-- blank = "ø",
+			char = "│",
+			animate = {
+				enabled = false,
+			},
+		},
 	},
 
 	keys = {
