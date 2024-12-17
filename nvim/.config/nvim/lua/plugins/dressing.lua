@@ -10,6 +10,9 @@ return {
 				},
 			},
 		},
+		select = {
+			backend = { "fzf-lua", "fzf", "nui", "builtin" },
+		},
 	},
 	init = function()
 		---@diagnostic disable-next-line: duplicate-set-field
