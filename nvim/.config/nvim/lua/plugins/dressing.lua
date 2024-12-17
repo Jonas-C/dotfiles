@@ -1,6 +1,16 @@
 return {
 	"stevearc/dressing.nvim",
 	lazy = true,
+	opts = {
+		input = {
+			mappings = {
+				i = {
+					["<Esc>"] = false,
+					["<C-c>"] = "Close",
+				},
+			},
+		},
+	},
 	init = function()
 		---@diagnostic disable-next-line: duplicate-set-field
 		vim.ui.select = function(...)
