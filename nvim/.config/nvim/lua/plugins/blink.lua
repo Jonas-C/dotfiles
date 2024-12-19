@@ -2,7 +2,7 @@ return {
 	{
 		"saghen/blink.cmp",
 		-- lazy = true,
-		version = "*",
+		version = false,
 		enabled = true,
 		build = "cargo build --release",
 		opts = {
@@ -20,6 +20,8 @@ return {
 				cmdline = {
 					["<C-k>"] = { "select_prev", "fallback" },
 					["<C-j>"] = { "select_next", "fallback" },
+					["tab"] = {},
+					["<c-tab>"] = {},
 				},
 			},
 
@@ -86,20 +88,13 @@ return {
 					},
 				},
 				ghost_text = {
-					-- enabled = true,
-				},
-			},
-
-			accept = {
-				auto_brackets = {
 					enabled = true,
 				},
 			},
 			sources = {
-				-- TODO: Figure out how to disable snippets and text entirely
+				-- TODO: Figure out how to disable snippets and text entirely.
 				default = function()
 					local node = vim.treesitter.get_node()
-					vim.notify("hello", vim.log.levels.INFO)
 					if vim.bo.filetype == "lua" then
 						return { "lsp", "path" }
 					elseif node and vim.tbl_contains({ "comment", "line_comment", "block_comment" }, node:type()) then
