@@ -7,8 +7,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local opts = { buffer = bufnr, silent = true }
 
 		vim.keymap.set("n", "L", vim.diagnostic.open_float, opts)
-		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-		vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
+		vim.keymap.set(
+			"n",
+			"gd",
+			"<cmd>FzfLua lsp_definitions     jump_to_single_result=true ignore_current_line=true<cr>",
+			opts
+		)
+		vim.keymap.set(
+			"n",
+			"gr",
+			"<cmd>FzfLua lsp_references      jump_to_single_result=true ignore_current_line=true<cr>",
+			opts
+		)
 		vim.keymap.set("n", "gp", vim.lsp.buf.signature_help, opts)
 		vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, opts)
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)

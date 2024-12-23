@@ -65,9 +65,11 @@ return {
 						["BlinkCmpLabel"] = { fg = colors.text },
 						["SnacksIndent"] = { fg = colors.surface0 },
 						["SnacksIndentScope"] = { fg = colors.sky },
+						["FzfLuaBorder"] = { bg = colors.mantle, fg = colors.surface0 },
 					}
 				end,
 				integrations = {
+					fzf = true,
 					harpoon = true,
 					gitsigns = true,
 					nvimtree = true,

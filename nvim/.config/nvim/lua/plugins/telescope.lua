@@ -7,16 +7,16 @@ return {
 	},
 	version = false,
 	keys = {
-		{
-			"<c-tab>",
-			"<cmd>Telescope buffers show_all_buffers=true sort_mru=true sort_lastused=true<cr>",
-			desc = "Switch buffer",
-		},
-		{ "<leader>f", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
-		{ "<leader>d", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-		{ "<leader>gf", "<cmd>Telescope git_status<cr>", desc = "Find files" },
-		{ "<leader>re", "<cmd>Telescope resume<cr>", desc = "Resume previous Telescope session" },
-		{ "zf", "<cmd>Telescope spell_suggest<cr>", desc = "Fix spelling errors" },
+		-- {
+		-- 	"<c-tab>",
+		-- 	"<cmd>Telescope buffers show_all_buffers=true sort_mru=true sort_lastused=true<cr>",
+		-- 	desc = "Switch buffer",
+		-- },
+		-- { "<leader>f", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
+		-- { "<leader>d", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+		-- { "<leader>gf", "<cmd>Telescope git_status<cr>", desc = "Find files" },
+		-- { "<leader>re", "<cmd>Telescope resume<cr>", desc = "Resume previous Telescope session" },
+		-- { "zf", "<cmd>Telescope spell_suggest<cr>", desc = "Fix spelling errors" },
 		{
 			"<leader>a",
 			function()

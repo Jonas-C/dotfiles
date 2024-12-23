@@ -20,6 +20,8 @@ return {
 				cmdline = {
 					["<C-k>"] = { "select_prev", "fallback" },
 					["<C-j>"] = { "select_next", "fallback" },
+					-- TODO: I don't like this. I want it to work like accept when I'm in the input, but not when I'm in the completion list.
+					-- ["<CR>"] = { "accept", "fallback" },
 					["tab"] = {},
 					["<c-tab>"] = {},
 				},
