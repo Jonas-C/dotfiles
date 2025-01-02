@@ -65,7 +65,9 @@ return {
 						["BlinkCmpLabel"] = { fg = colors.text },
 						["SnacksIndent"] = { fg = colors.surface0 },
 						["SnacksIndentScope"] = { fg = colors.sky },
-						["FzfLuaBorder"] = { bg = colors.mantle, fg = colors.surface0 },
+						["FzfLuaBorder"] = { bg = colors.base, fg = colors.surface0 },
+						["FzfLuaNormal"] = { bg = colors.base },
+						-- ["FzfLuaBackdrop"] = { bg = colors.flamingo },
 					}
 				end,
 				integrations = {

@@ -11,14 +11,19 @@ return {
 			},
 			fzf_opts = {
 				["--no-scrollbar"] = true,
+				["--cycle"] = true,
 			},
 			winopts = {
 				width = 0.8,
 				height = 0.8,
 				row = 0.5,
 				col = 0.5,
+				backdrop = false,
 				preview = {
 					scrollchars = { "┃", "" },
+				},
+				treesitter = {
+					enabled = true,
 				},
 			},
 			files = {
@@ -30,8 +35,8 @@ return {
 			},
 			grep = {
 				actions = {
-					["alt-i"] = { actions.toggle_ignore },
-					["alt-h"] = { actions.toggle_hidden },
+					["ctrl-i"] = { actions.toggle_ignore },
+					["ctrl-h"] = { actions.toggle_hidden },
 				},
 			},
 		}
@@ -41,6 +46,13 @@ return {
 		-- 	},
 		-- },
 	end,
+	-- init = function()
+	-- 	vim.ui.select = function(...)
+	-- 		require("lazy").load({ plugins = { "fzf-lua" } })
+	-- 		require("fzf-lua").register_ui_select(nil)
+	-- 		return vim.ui.select(...)
+	-- 	end
+	-- end,
 	keys = {
 		{ "<leader>f", "<cmd>FzfLua live_grep<cr>", desc = "Live grep" },
 		{ "<leader>d", "<cmd>FzfLua files<cr>", desc = "Files" },

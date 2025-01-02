@@ -30,6 +30,8 @@ return {
 		insert_mappings = false,
 		start_in_insert = true,
 		persist_mode = false,
+		shade_filetypes = {},
+		shade_terminals = false,
 		open_mapping = [[<leader>+]],
 		float_opts = {
 			border = "curved",
