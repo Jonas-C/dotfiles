@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.api.nvim_create_autocmd("FileType", { command = "set formatoptions-=o" })
 
 -- Set conceallevel when entering a norg file. Enables fancy neorg functionality.
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, { pattern = { "*.norg" }, command = "set conceallevel=3" })
+-- vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, { pattern = { "*.norg" }, command = "set conceallevel=3" })
 
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
