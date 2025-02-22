@@ -13,6 +13,7 @@ map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 
 map("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy", silent = true })
 map("n", "<leader>M", "<cmd>Mason<cr>", { desc = "Mason", silent = true })
+map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit", silent = true })
 
 map("n", "<D-w>", function()
 	Snacks.bufdelete()
