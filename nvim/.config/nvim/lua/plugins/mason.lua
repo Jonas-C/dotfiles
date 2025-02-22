@@ -7,7 +7,7 @@ return {
 	},
 	config = function()
 		require("mason").setup({
-			ui = { border = "rounded" },
+			ui = { border = "rounded", backdrop = 100 },
 		})
 		require("mason-lspconfig").setup({ automatic_installation = true })
 		require("mason-null-ls").setup({ automatic_installation = true })
