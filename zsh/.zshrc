@@ -22,7 +22,8 @@ export RIPGREP_CONFIG_PATH="$HOME/.config/.ripgreprc"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#515151"
 
 # ASDF STUFF
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 
