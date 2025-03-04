@@ -22,7 +22,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gp", vim.lsp.buf.signature_help, opts)
 		vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, opts)
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-		vim.keymap.set("n", "gn", vim.diagnostic.goto_next)
-		vim.keymap.set("n", "gp", vim.diagnostic.goto_next)
+		vim.keymap.set("n", "gn", function()
+			vim.diagnostic.jump({ count = 1, float = true })
+		end)
+		vim.keymap.set("n", "gp", function()
+			vim.diagnostic.jump({ count = -1, float = true })
+		end)
 	end,
 })
