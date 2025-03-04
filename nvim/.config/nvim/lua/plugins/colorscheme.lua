@@ -46,6 +46,11 @@ return {
 						["NeoTreeDirectoryName"] = { fg = colors.text },
 						["NeoTreeDirectoryIcon"] = { fg = colors.text },
 						["NeoTreeRootName"] = { fg = colors.text },
+						["NeoTreeNormal"] = { bg = colors.base },
+						["NeoTreeNormalNC"] = { bg = colors.base },
+						["NeoTreeTabInactive"] = { bg = colors.base },
+						["WinSeparator"] = { fg = colors.surface0 },
+						["NeoTreeWinSeparator"] = { fg = colors.surface0 },
 						["@parameter"] = { fg = colors.text },
 						["@punctuation.bracket"] = { fg = colors.yellow },
 						["@punctuation.special"] = { fg = colors.sapphire },
@@ -65,9 +70,8 @@ return {
 						["BlinkCmpLabel"] = { fg = colors.text },
 						["SnacksIndent"] = { fg = colors.surface0 },
 						["SnacksIndentScope"] = { fg = colors.sky },
-						["FzfLuaBorder"] = { bg = colors.base, fg = colors.surface0 },
-						["FzfLuaNormal"] = { bg = colors.base },
-						-- ["FzfLuaBackdrop"] = { bg = colors.flamingo },
+						["FloatBorder"] = { bg = colors.base, fg = colors.surface0 },
+						["NormalFloat"] = { bg = colors.base },
 					}
 				end,
 				integrations = {
