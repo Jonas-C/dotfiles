@@ -75,6 +75,8 @@ return {
 						["SnacksPickerList"] = { bg = colors.base },
 						["SnacksPickerInput"] = { bg = colors.base },
 						["SnacksPickerPreview"] = { bg = colors.base },
+						["LualineTmuxWindowActive"] = { fg = colors.base, bg = colors.yellow },
+						["LualineTmuxWindowInactive"] = { fg = colors.base, bg = colors.sapphire },
 					}
 				end,
 				integrations = {

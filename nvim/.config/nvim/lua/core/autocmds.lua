@@ -50,3 +50,15 @@ vim.api.nvim_create_autocmd("CmdwinEnter", {
 		vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
 	end,
 })
+
+vim.api.nvim_create_autocmd({ "VimEnter", "FocusGained" }, {
+	callback = function()
+		vim.fn.system("tmux set status off; tmux refresh-client -S")
+	end,
+})
+
+vim.api.nvim_create_autocmd("VimLeave", {
+	callback = function()
+		vim.fn.system("tmux set status on")
+	end,
+})
