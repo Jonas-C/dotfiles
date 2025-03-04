@@ -1,11 +1,18 @@
 return {
 	{
 		"saghen/blink.cmp",
-		-- lazy = true,
 		version = false,
 		enabled = true,
 		build = "cargo build --release",
 		opts = {
+			cmdline = {
+				keymap = {
+					["<C-k>"] = { "show", "select_prev", "fallback" },
+					["<C-j>"] = { "show", "select_next", "fallback" },
+					["tab"] = {},
+					["<c-tab>"] = {},
+				},
+			},
 			keymap = {
 				-- Override for Copilot
 				["<C-space>"] = {},
@@ -17,19 +24,10 @@ return {
 
 				["<C-f>"] = { "scroll_documentation_up", "fallback" },
 				["<C-d>"] = { "scroll_documentation_down", "fallback" },
-				cmdline = {
-					["<C-k>"] = { "select_prev", "fallback" },
-					["<C-j>"] = { "select_next", "fallback" },
-					-- TODO: I don't like this. I want it to work like accept when I'm in the input, but not when I'm in the completion list.
-					-- ["<CR>"] = { "accept", "fallback" },
-					["tab"] = {},
-					["<c-tab>"] = {},
-				},
 			},
 
 			appearance = {
 				kind_icons = {
-
 					Array = " ",
 					Boolean = "󰨙 ",
 					Class = " ",
@@ -89,29 +87,9 @@ return {
 						border = "rounded",
 					},
 				},
-				ghost_text = {
-					enabled = true,
-				},
 			},
 			sources = {
-				-- TODO: Figure out how to disable snippets and text entirely.
-				default = function()
-					local node = vim.treesitter.get_node()
-					if vim.bo.filetype == "lua" then
-						return { "lsp", "path" }
-					elseif node and vim.tbl_contains({ "comment", "line_comment", "block_comment" }, node:type()) then
-						return {}
-					else
-						return { "lsp", "path" }
-					end
-				end,
-				-- transform_items = function(_, items)
-				-- 	-- Remove snippet and "Text" sources from lsp autocomplete
-				-- 	return vim.tbl_filter(function(item)
-				-- 		return item.kind ~= vim.lsp.protocol.CompletionItemKind.Text
-				-- 			or item.kind ~= vim.lsp.protocol.CompletionItemKind.Snippet
-				-- 	end, items)
-				-- end,
+				default = { "lsp", "path" },
 			},
 		},
 	},
