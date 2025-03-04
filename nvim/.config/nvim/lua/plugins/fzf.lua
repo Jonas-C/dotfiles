@@ -1,5 +1,6 @@
 return {
 	"ibhagwan/fzf-lua",
+	enabled = false,
 	-- optional for icon support
 	opts = function()
 		local actions = require("fzf-lua.actions")

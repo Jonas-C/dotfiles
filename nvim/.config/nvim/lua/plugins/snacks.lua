@@ -1,3 +1,7 @@
+vim.api.nvim_create_user_command("Pickers", function()
+	Snacks.picker()
+end, { nargs = "*" })
+
 return {
 	"folke/snacks.nvim",
 	priority = 1000,
@@ -14,15 +18,101 @@ return {
 		words = { enabled = true },
 		indent = {
 			enabled = true,
-			-- blank = "ø",
 			char = "│",
 			animate = {
 				enabled = false,
 			},
 		},
+		win = {
+			backdrop = false,
+		},
+		picker = {
+			layout = {
+				layout = {
+					backdrop = false,
+				},
+			},
+			formatters = {
+				file = {
+					truncate = 80,
+				},
+			},
+			sources = {
+				grep = {
+					-- this hides the text match from the grep result.
+					transform = function(item)
+						item.line = nil
+					end,
+				},
+			},
+			win = {
+				input = {
+					keys = {
+						["<c-tab>"] = { "list_down", mode = { "i", "n" } },
+						["<c-s-tab>"] = { "list_up", mode = { "i", "n" } },
+					},
+				},
+			},
+		},
 	},
 
 	keys = {
+		{
+			"gr",
+			function()
+				Snacks.picker.lsp_references()
+			end,
+			nowait = true,
+			desc = "References",
+		},
+		{
+			"gd",
+			function()
+				Snacks.picker.lsp_definitions()
+			end,
+			desc = "Goto Definition",
+		},
+		{
+			"<leader>e",
+			function()
+				Snacks.picker.explorer()
+			end,
+		},
+		{
+			"<leader>f",
+			function()
+				Snacks.picker.grep()
+			end,
+			desc = "Live grep",
+		},
+		{
+			"<leader>d",
+			function()
+				Snacks.picker.files()
+			end,
+			desc = "Find files",
+		},
+		{
+			"<leader>gf",
+			function()
+				Snacks.picker.git_status()
+			end,
+			desc = "Git Files",
+		},
+		{
+			"<leader>re",
+			function()
+				Snacks.picker.resume()
+			end,
+			desc = "Resume previous session",
+		},
+		{
+			"<c-tab>",
+			function()
+				Snacks.picker.buffers({ current = false })
+			end,
+			desc = "Buffers",
+		},
 		{
 			"<leader>gbr",
 			function()

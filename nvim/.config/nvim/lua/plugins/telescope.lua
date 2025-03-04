@@ -5,6 +5,7 @@ return {
 	dependencies = {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
+	enabled = false,
 	version = false,
 	keys = {
 		-- {
@@ -40,7 +41,6 @@ return {
 				},
 			},
 			defaults = {
-				-- file_ignore_patterns = { ".git/", "./node_modules/", "venv/", ".har$", "styled-system/" },
 				file_ignore_patterns = { ".git/", "./node_modules/", "venv/", ".har$", "styled-system/" },
 				mappings = {
 					i = {

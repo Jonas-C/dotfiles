@@ -72,10 +72,12 @@ return {
 						["SnacksIndentScope"] = { fg = colors.sky },
 						["FloatBorder"] = { bg = colors.base, fg = colors.surface0 },
 						["NormalFloat"] = { bg = colors.base },
+						["SnacksPickerList"] = { bg = colors.base },
+						["SnacksPickerInput"] = { bg = colors.base },
+						["SnacksPickerPreview"] = { bg = colors.base },
 					}
 				end,
 				integrations = {
-					fzf = true,
 					harpoon = true,
 					gitsigns = true,
 					nvimtree = true,

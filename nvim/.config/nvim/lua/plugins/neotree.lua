@@ -100,7 +100,7 @@ return {
 						if node.type ~= "directory" then
 							path = node:get_parent_id()
 						end
-						require("telescope.builtin").live_grep({ search_dirs = { path } })
+						Snacks.picker.grep({ cwd = path })
 					end,
 				},
 			},
