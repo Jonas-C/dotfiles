@@ -1,5 +1,6 @@
 --- @diagnostic disable: duplicate-set-field
 local M = {}
+local utils = require("util")
 
 --- Normalize a location to a uri and range
 --- @param location table
@@ -19,20 +20,23 @@ M.register_handlers = function()
 	-- opens a quickfix list when it really doesn't need to.
 	vim.lsp.handlers["textDocument/definition"] = function(_, result, ...)
 		if vim.islist(result) then
-			local seen = {}
+			local ignored_paths = {
+				"react/index.d.ts",
+				"components/createStyleContext.tsx",
+				"styled-system/types/jsx.d.ts",
+				"node_modules/@ndla/styled-system/types/jsx.d.ts",
+				"styled-system/lib/types/jsx.d.ts",
+				"types/jsx.d.ts",
+			}
 
-			result = vim.tbl_filter(function(item)
-				local location = M.normalize_location(item)
-				local key = location.uri .. ":" .. location.range.start.line
-
-				-- Skip this line if we already have a reference to the same line
-				if seen[key] then
-					return false
+			for key, value in ipairs(result) do
+				for _, ignored_path in pairs(ignored_paths) do
+					-- If textDocument/definition returns more than one result, remove any result contained within ignored_paths.
+					if #result ~= 1 and utils.ends_with(value.targetUri, ignored_path) then
+						table.remove(result, key)
+					end
 				end
-
-				seen[key] = true
-				return true
-			end, result)
+			end
 		end
 
 		-- Defer to the built-in handler after filtering the results
