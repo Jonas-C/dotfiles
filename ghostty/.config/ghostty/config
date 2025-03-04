@@ -1,8 +1,21 @@
-# font-family = Symbols Nerd Font Mono
-# font-family = SF Mono
-font-size = 14
+font-family = SF Mono
+font-size = 12
+font-thicken = true
 
-# macos-titlebar-style = hidden
+theme = catppuccin-dark
+bold-is-bright = true
+
+# These values might need to be edited when changing font-family or font-size
+# Make sure to keep these two in sync. 
+adjust-cell-height = 47%
+adjust-cursor-height = 20%
+# I like a thicker cursor
+adjust-cursor-thickness = 200%
+adjust-underline-position = 10%
+
+cursor-color = #ffcc00
+cursor-style-blink = false
+
 macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = true
 macos-window-shadow = false
@@ -11,11 +24,15 @@ window-height = 200
 window-width = 300
 window-padding-x = 0
 window-padding-y = 0
-# adjust-underline-position = 10%
 
-background-opacity = 0.96
-background-blur-radius = 40
+
+macos-option-as-alt = false
+
+background-opacity = 1
+background-blur-radius = 0
 keybind = ctrl+r=reload_config
+# Cause I keep hitting new tab by accident
+keybind = super+t=unbind
 keybind = super+w=text:\x1Bw
 keybind = super+s=text:\x1Bs
 keybind = ctrl+tab=text:\x1b[9;5u
