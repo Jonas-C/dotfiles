@@ -86,7 +86,7 @@ return {
 					enabled = false,
 					leave_dirs_open = true,
 				},
-				-- group_empty_dirs = true,
+				group_empty_dirs = true,
 				open_current = true,
 				filtered_items = {
 					visible = true,
