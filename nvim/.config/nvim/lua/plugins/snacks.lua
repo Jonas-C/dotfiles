@@ -16,6 +16,11 @@ return {
 			enabled = false,
 		},
 		words = { enabled = true },
+		scope = {
+			treesitter = {
+				enabled = false,
+			},
+		},
 		indent = {
 			enabled = true,
 			char = "│",
