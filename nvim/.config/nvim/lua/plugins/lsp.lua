@@ -23,7 +23,6 @@ return {
 		"b0o/schemastore.nvim",
 		lazy = true,
 	},
-	{ "dmmulroy/ts-error-translator.nvim", lazy = true, config = true },
 	{ "pmizio/typescript-tools.nvim", keys = {} },
 	{
 		"scalameta/nvim-metals",
