@@ -74,22 +74,6 @@ M.setup_servers = function()
 				},
 			},
 			vtsls = {
-				tsserver = {
-					globalPlugins = {
-						{
-							name = "@styled/typescript-styled-plugin",
-							location = os.getenv("HOME") .. "/npm-cache/lib/node_modules/",
-							enableForWorkspaceTypeScriptVersions = true,
-						},
-						{
-							name = "@vue/typescript-plugin",
-							location = os.getenv("HOME") .. "/npm-cache/lib/node_modules/",
-							languages = { "vue" },
-							configNamespace = "typescript",
-							enableForWorkspaceTypeScriptVersions = true,
-						},
-					},
-				},
 				autoUseWorkspaceTsdk = true,
 				experimental = {
 					completion = {
