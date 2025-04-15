@@ -23,7 +23,6 @@ return {
 		"b0o/schemastore.nvim",
 		lazy = true,
 	},
-	{ "pmizio/typescript-tools.nvim", keys = {} },
 	{
 		"scalameta/nvim-metals",
 		ft = { "scala", "sbt", "java" },
