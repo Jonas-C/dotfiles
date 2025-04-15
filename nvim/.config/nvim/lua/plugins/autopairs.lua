@@ -3,7 +3,7 @@ return {
 	event = "VeryLazy",
 	opts = {
 		check_ts = true,
-		disable_filetype = { "TelescopePrompt", "grug-far", "grug-far-history", "snacks_picker_input" },
+		disable_filetype = { "grug-far", "grug-far-history", "snacks_picker_input" },
 		ts_config = { java = false },
 		enable_close_on_slash = false,
 	},

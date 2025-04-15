@@ -65,7 +65,7 @@ return {
 			filesystem = {
 				window = {
 					mappings = {
-						["f"] = "telescope_find",
+						["f"] = "find_in_folder",
 						["O"] = {
 							function(state)
 								vim.ui.open(state.tree:get_node().path)
@@ -94,7 +94,7 @@ return {
 					hide_gitignored = false,
 				},
 				commands = {
-					telescope_find = function(state)
+					find_in_folder = function(state)
 						local node = state.tree:get_node()
 						local path = node:get_id()
 						if node.type ~= "directory" then

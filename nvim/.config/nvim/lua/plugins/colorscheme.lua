@@ -92,9 +92,6 @@ return {
 					diffview = true,
 					blink_cmp = true,
 					snacks = true,
-					telescope = {
-						enabled = true,
-					},
 					illuminate = {
 						enabled = true,
 						lsp = true,
