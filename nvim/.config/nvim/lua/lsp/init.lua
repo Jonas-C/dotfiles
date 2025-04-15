@@ -44,12 +44,11 @@ M.setup_servers = function()
 		filetypes = { "graphql", "typescript", "typescriptreact" },
 	})
 	M.server("jsonls", {
-		on_new_config = function(new_config)
-			new_config.settings.json.schemas = new_config.settings.json.schemas or {}
-			vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
-		end,
 		settings = {
-			validate = { enable = true },
+			json = {
+				schemas = require("schemastore").json.schemas(),
+				validate = { enable = true },
+			},
 		},
 	})
 
