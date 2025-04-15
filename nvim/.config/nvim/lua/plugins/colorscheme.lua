@@ -105,10 +105,6 @@ return {
 							information = { "undercurl" },
 						},
 					},
-					mini = {
-						enabled = true,
-						indentscope_color = "sky",
-					},
 				},
 			})
 
