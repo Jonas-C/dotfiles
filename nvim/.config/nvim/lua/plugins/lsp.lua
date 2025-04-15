@@ -2,9 +2,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		event = "VeryLazy",
-		dependencies = {
-			"nvimtools/none-ls.nvim",
-		},
 		config = function()
 			return require("lsp").setup()
 		end,
