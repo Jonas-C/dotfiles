@@ -11,24 +11,25 @@ M.normalize_location = function(location)
 	}
 end
 
+local ignored_paths = {
+	"react/index.d.ts",
+	"components/createStyleContext.tsx",
+	"styled-system/types/jsx.d.ts",
+	"node_modules/@ndla/styled-system/types/jsx.d.ts",
+	"styled-system/lib/types/jsx.d.ts",
+	"types/jsx.d.ts",
+}
+
 M.register_handlers = function()
-	local definition = vim.lsp.handlers["textDocument/definition"]
-	local references = vim.lsp.handlers["textDocument/references"]
+	local methods = vim.lsp.protocol.Methods
+	local definition = vim.lsp.handlers[methods.textDocument_definition]
+	local references = vim.lsp.handlers[methods.textDocument_references]
 
 	-- When there are multiple results on the same line for a definition, only
 	-- show the first one. This prevents many times where going to definition
 	-- opens a quickfix list when it really doesn't need to.
-	vim.lsp.handlers["textDocument/definition"] = function(_, result, ...)
+	vim.lsp.handlers[methods.textDocument_definition] = function(_, result, ...)
 		if vim.islist(result) then
-			local ignored_paths = {
-				"react/index.d.ts",
-				"components/createStyleContext.tsx",
-				"styled-system/types/jsx.d.ts",
-				"node_modules/@ndla/styled-system/types/jsx.d.ts",
-				"styled-system/lib/types/jsx.d.ts",
-				"types/jsx.d.ts",
-			}
-
 			for key, value in ipairs(result) do
 				for _, ignored_path in pairs(ignored_paths) do
 					-- If textDocument/definition returns more than one result, remove any result contained within ignored_paths.
@@ -47,7 +48,7 @@ M.register_handlers = function()
 	-- which is really unnecessary since I know there is a reference where my
 	-- cursor is. This filters out the current line before sending the results to
 	-- the quickfix list.
-	vim.lsp.handlers["textDocument/references"] = function(_, result, ...)
+	vim.lsp.handlers[methods.textDocument_references] = function(_, result, ...)
 		if vim.islist(result) then
 			local cursor_line = unpack(vim.api.nvim_win_get_cursor(0))
 
