@@ -3,7 +3,7 @@ return {
 		"neovim/nvim-lspconfig",
 		event = "VeryLazy",
 		config = function()
-			return require("lsp").setup()
+			return require("lsp")
 		end,
 	},
 	{

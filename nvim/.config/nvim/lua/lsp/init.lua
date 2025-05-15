@@ -1,138 +1,75 @@
-local M = {}
-local utils = require("util")
+-- local methods = vim.lsp.protocol.Methods
 
-M.server = function(server, config)
-	config = config or {}
-	config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-	require("lspconfig")[server].setup(config)
+--- Sets up LSP keymaps and autocommands for the given buffer.
+---@param client vim.lsp.Client
+---@param bufnr integer
+local function on_attach(client, bufnr)
+	local opts = { buffer = bufnr, silent = true }
+	vim.keymap.set("n", "L", vim.diagnostic.open_float, opts)
+	vim.keymap.set("n", "gp", vim.lsp.buf.signature_help, opts)
+	vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, opts)
+	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+	vim.keymap.set("n", "gn", function()
+		vim.diagnostic.jump({ count = 1, float = true })
+	end)
+	vim.keymap.set("n", "gp", function()
+		vim.diagnostic.jump({ count = -1, float = true })
+	end)
+	-- if client:supports_method(methods.textDocument_documentHighlight) then
+	-- 	local under_cursor_highlights_group = vim.api.nvim_create_augroup("mariasolos/cursor_highlights", { clear = false })
+	-- 	vim.api.nvim_create_autocmd({ "CursorHold", "InsertLeave" }, {
+	-- 		group = under_cursor_highlights_group,
+	-- 		desc = "Highlight references under the cursor",
+	-- 		buffer = bufnr,
+	-- 		callback = vim.lsp.buf.document_highlight,
+	-- 	})
+	-- 	vim.api.nvim_create_autocmd({ "CursorMoved", "InsertEnter", "BufLeave" }, {
+	-- 		group = under_cursor_highlights_group,
+	-- 		desc = "Clear highlight references",
+	-- 		buffer = bufnr,
+	-- 		callback = vim.lsp.buf.clear_references,
+	-- 	})
+	-- end
 end
 
---- Normalize a location to a uri and range
---- @param location table
-M.normalize_location = function(location)
-	return {
-		uri = location.uri or location.targetUri,
-		range = location.range or location.targetSelectionRange,
-	}
+for name, icon in pairs(require("core.icons").diagnostics) do
+	name = "DiagnosticSign" .. name
+	vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
 end
 
-M.setup_servers = function()
-	M.server("lua_ls")
-	M.server("biome")
-	M.server("html")
-	M.server("taplo")
-	M.server("yamlls", {
-		settings = {
-			yaml = {
-				keyOrdering = false,
-			},
-		},
-	})
-	M.server("pyright")
-	-- TODO: Investigate why this fails M.server("ruff-lsp")
-	M.server("eslint")
-	M.server("cssls")
-	M.server("volar", {
-		init_options = {
-			vue = {
-				hybridMode = true,
-			},
-		},
-	})
-	M.server("tailwindcss")
-	M.server("graphql", {
-		filetypes = { "graphql", "typescript", "typescriptreact" },
-	})
-	M.server("jsonls", {
-		settings = {
-			json = {
-				schemas = require("schemastore").json.schemas(),
-				validate = { enable = true },
-			},
-		},
-	})
+vim.diagnostic.config({
+	underline = true,
+	update_in_insert = false,
+	signs = false,
+	severity_sort = true,
+	float = {
+		border = "rounded",
+	},
+})
 
-	M.server("vtsls", {
-		filetypes = {
-			"javascript",
-			"javascriptreact",
-			"javascript.jsx",
-			"typescript",
-			"typescriptreact",
-			"typescript.tsx",
-			"vue",
-		},
-		settings = {
-			typescript = {
-				preferences = {
-					importModuleSpecifier = "relative",
-				},
-			},
-			javascript = {
-				preferences = {
-					importModuleSpecifier = "relative",
-				},
-			},
-			vtsls = {
-				autoUseWorkspaceTsdk = true,
-				experimental = {
-					completion = {
-						enableServerSideFuzzyMatch = true,
-					},
-				},
-			},
-		},
-		handlers = {
-			-- When there are multiple results on the same line for a definition, only
-			-- show the first one. This prevents many times where going to definition
-			-- opens a quickfix list when it really doesn't need to.
-			["textDocument/definition"] = function(_, result, ...)
-				if vim.islist(result) then
-					local ignored_paths = {
-						"react/index.d.ts",
-						"components/createStyleContext.tsx",
-						"styled-system/types/jsx.d.ts",
-						"node_modules/@ndla/styled-system/types/jsx.d.ts",
-						"styled-system/lib/types/jsx.d.ts",
-						"types/jsx.d.ts",
-					}
+vim.api.nvim_create_autocmd("LspAttach", {
+	desc = "Configure LSP keymaps",
+	callback = function(args)
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
 
-					for key, value in ipairs(result) do
-						for _, ignored_path in pairs(ignored_paths) do
-							-- If textDocument/definition returns more than one result, remove any result contained within ignored_paths.
-							if #result ~= 1 and utils.ends_with(value.targetUri, ignored_path) then
-								table.remove(result, key)
-							end
-						end
-					end
-				end
+		-- I don't think this can happen but it's a wild world out there.
+		if not client then
+			return
+		end
 
-				-- Defer to the built-in handler after filtering the results
-				vim.lsp.handlers["textDocument/definition"](_, result, ...)
-			end,
-		},
-	})
+		on_attach(client, args.buf)
+	end,
+})
 
-	M.server("gopls")
-end
-
-M.setup = function()
-	for name, icon in pairs(require("core.icons").diagnostics) do
-		name = "DiagnosticSign" .. name
-		vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
-	end
-	vim.diagnostic.config({
-		underline = true,
-		update_in_insert = false,
-		signs = false,
-		severity_sort = true,
-		float = {
-			border = "rounded",
-		},
-	})
-	require("lsp.handlers").register_handlers()
-	require("lsp.autocmd")
-	M.setup_servers()
-end
-
-return M
+vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
+	once = true,
+	callback = function()
+		local server_configs = vim
+			.iter(vim.api.nvim_get_runtime_file("after/lsp/*.lua", true))
+			:map(function(file)
+				return vim.fn.fnamemodify(file, ":t:r")
+			end)
+			:totable()
+		vim.lsp.enable(server_configs)
+	end,
+})
