@@ -60,3 +60,4 @@ opt.updatetime = 200
 -- TODO: Spell checking does not work in neogit commit messages. Tracked in #1305
 opt.spelllang = { "en" }
 opt.spelloptions = "camel,noplainbuffer"
+vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"

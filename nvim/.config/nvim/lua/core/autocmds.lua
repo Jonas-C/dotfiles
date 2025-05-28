@@ -62,3 +62,11 @@ vim.api.nvim_create_autocmd("VimLeave", {
 		vim.fn.system("tmux set status on")
 	end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	callback = function(details)
+		if not pcall(vim.treesitter.start, details.buf) then
+			return
+		end
+	end,
+})
