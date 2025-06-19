@@ -1,0 +1,53 @@
+let mapleader=" "
+Plug 'tpope/vim-commentary'
+Plug 'machakann/vim-highlightedyank'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+
+set incsearch
+set nu
+set relativenumber
+set clipboard=unnamedplus
+set hlsearch
+set ignorecase
+set smartcase
+set visualbell
+" Up and down in cmp
+set lookupkeys=<Tab>,<Down>,<Up>,<Enter>,<Left>,<Right>,<C-Down>,<C-j>,<C-k>,<PageDown>,<C-Q>
+
+" Normal mode: clear highlight and stay in normal mode
+nnoremap <Esc> :noh<CR>
+
+" Visual mode: same
+vnoremap <Esc> :noh<CR><Esc>
+
+" Insert mode: exit insert mode, then clear highlight
+inoremap <Esc> <Esc>:noh<CR>
+
+nnoremap <C-j> 5j
+nnoremap <C-k> 5k
+
+vnoremap <C-j> 5j
+vnoremap <C-k> 5k
+
+map <leader>d :action SearchEverywhere<CR>
+map <leader>f :action FindInPath<CR>
+map <leader>vr :source ~/.config/ideavim/ideavimrc<CR>
+map <leader>gf :action Vcs.QuickListPopupAction<CR>
+map <leader>r <Action>(RenameElement)
+map <S-l> <Action>(ShowErrorDescription)
+
+map gn <Action>(GotoNextError)
+map gp :action GotoPreviousProblem<CR>
+
+map <leader>. :action ShowIntentionActions<CR>
+
+map <leader>gn :action VcsShowNextChangeMarker<CR>
+map <leader>gbh :action Annotate<CR>
+
+
+nnoremap <leader>sp <C-W>v
+nnoremap <leader>sv <C-W>s
+
+nnoremap <leader>q :q<CR>
+nmap <leader>e <Action>(ActivateProjectToolWindow)
