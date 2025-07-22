@@ -15,6 +15,10 @@ local function on_attach(client, bufnr)
 	vim.keymap.set("n", "gp", function()
 		vim.diagnostic.jump({ count = -1, float = true })
 	end)
+
+	if client:supports_method("textDocument/linkedEditingRange") then
+		vim.lsp.linked_editing_range.enable(true, { client_id = client.id })
+	end
 	-- if client:supports_method(methods.textDocument_documentHighlight) then
 	-- 	local under_cursor_highlights_group = vim.api.nvim_create_augroup("mariasolos/cursor_highlights", { clear = false })
 	-- 	vim.api.nvim_create_autocmd({ "CursorHold", "InsertLeave" }, {
