@@ -26,20 +26,33 @@ return {
 	{
 		"scalameta/nvim-metals",
 		ft = { "scala", "sbt", "java" },
-		opts = function()
-			local metals_config = require("metals").bare_config()
-			-- metals_config.on_attach = function(client, bufnr)
-			-- 	-- your on_attach function
-			-- end
-
-			return metals_config
-		end,
-		config = function(self, metals_config)
+		keys = {
+			{
+				"<leader>mc",
+				function()
+					require("metals").compile_cascade()
+				end,
+				desc = "Metals compile cascade",
+			},
+			{
+				"<leader>me",
+				function()
+					require("metals").commands()
+				end,
+				desc = "Metals menu",
+			},
+		},
+		config = function()
+			local metals = require("metals")
+			local config = metals.bare_config()
+			config.settings = {
+				serverProperties = { "-Xmx2g" },
+			}
 			local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
 			vim.api.nvim_create_autocmd("FileType", {
-				pattern = self.ft,
+				pattern = { "scala", "sbt", "java" },
 				callback = function()
-					require("metals").initialize_or_attach(metals_config)
+					metals.initialize_or_attach(config)
 				end,
 				group = nvim_metals_group,
 			})
