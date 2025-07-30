@@ -30,10 +30,13 @@ nnoremap <C-k> 5k
 vnoremap <C-j> 5j
 vnoremap <C-k> 5k
 
-map <leader>d :action SearchEverywhere<CR>
+
+map <leader>rr :action SelectInProjectView<CR>
+map <leader>d :action GotoFile<CR>
 map <leader>f :action FindInPath<CR>
 map <leader>vr :source ~/.config/ideavim/ideavimrc<CR>
 map <leader>gf :action Vcs.QuickListPopupAction<CR>
+map gr <Action>(ShowUsages)
 map <leader>r <Action>(RenameElement)
 map <S-l> <Action>(ShowErrorDescription)
 
