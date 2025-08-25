@@ -1,6 +1,7 @@
 [core]
   pager = less
   editor = nvim
+  excludesFile = "~/.gitignore-global"
 [merge]
   conflictstyle = diff3
 [diff]
