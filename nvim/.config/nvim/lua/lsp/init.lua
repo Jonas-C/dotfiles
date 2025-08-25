@@ -16,6 +16,19 @@ local function on_attach(client, bufnr)
 		vim.diagnostic.jump({ count = -1, float = true })
 	end)
 
+	if client:supports_method("textDocument/inlineCompletion") then
+		vim.lsp.inline_completion.enable(true)
+		vim.keymap.set("i", "<C- >", function()
+			if not vim.lsp.inline_completion.get() then
+				return "<C- >"
+			end
+		end, {
+			expr = true,
+			replace_keycodes = true,
+			desc = "Get the current inline completion",
+		})
+	end
+
 	if client:supports_method("textDocument/linkedEditingRange") then
 		vim.lsp.linked_editing_range.enable(true, { client_id = client.id })
 	end
