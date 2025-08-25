@@ -46,7 +46,10 @@ return {
 			local metals = require("metals")
 			local config = metals.bare_config()
 			config.settings = {
-				serverProperties = { "-Xmx2g" },
+				serverProperties = { "-Xmx8g" },
+			}
+			config.cmd_env = {
+				MILL_OUTPUT_DIR = "out-metals",
 			}
 			local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
 			vim.api.nvim_create_autocmd("FileType", {
