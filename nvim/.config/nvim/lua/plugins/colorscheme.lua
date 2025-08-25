@@ -54,6 +54,7 @@ return {
 						["@parameter"] = { fg = colors.text },
 						["@punctuation.bracket"] = { fg = colors.yellow },
 						["@punctuation.special"] = { fg = colors.sapphire },
+						["@variable.parameter"] = { fg = colors.text },
 						["@variable.builtin"] = { fg = colors.flamingo },
 						["@variable.builtin.css"] = { fg = colors.maroon },
 						["@lsp.type.interface"] = { fg = colors.yellow },
