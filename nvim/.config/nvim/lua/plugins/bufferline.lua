@@ -22,7 +22,7 @@ return {
 	},
 	config = function(_, opts)
 		require("bufferline").setup({
-			highlights = require("catppuccin.groups.integrations.bufferline").get_theme(),
+			highlights = require("catppuccin.special.bufferline").get_theme(),
 			options = opts,
 		})
 	end,

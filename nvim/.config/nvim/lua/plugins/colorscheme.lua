@@ -41,6 +41,14 @@ return {
 					},
 				},
 				no_italic = true, -- Force no italic
+				lsp_styles = {
+					underlines = {
+						errors = { "undercurl" },
+						hints = { "undercurl" },
+						warnings = { "undercurl" },
+						information = { "undercurl" },
+					},
+				},
 				custom_highlights = function(colors)
 					return {
 						["NeoTreeDirectoryName"] = { fg = colors.text },
@@ -84,27 +92,16 @@ return {
 					harpoon = true,
 					gitsigns = true,
 					nvimtree = true,
-					treesitter = true,
 					mason = true,
 					neotree = true,
 					neogit = true,
 					noice = true,
-					semantic_tokens = true,
 					diffview = true,
 					blink_cmp = true,
 					snacks = true,
 					illuminate = {
 						enabled = true,
 						lsp = true,
-					},
-					native_lsp = {
-						enabled = true,
-						underlines = {
-							errors = { "undercurl" },
-							hints = { "undercurl" },
-							warnings = { "undercurl" },
-							information = { "undercurl" },
-						},
 					},
 				},
 			})
