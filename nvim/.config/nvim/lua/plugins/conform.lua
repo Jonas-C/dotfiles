@@ -8,6 +8,17 @@ return {
 			return { timeout_ms = 1000, lsp_fallback = true }
 		end,
 		notify_on_error = true,
+		formatters = {
+			prettier = {
+				require_cwd = true,
+			},
+			prettierd = {
+				require_cwd = true,
+			},
+			biome = {
+				require_cwd = true,
+			},
+		},
 		formatters_by_ft = {
 			lua = { "stylua" },
 			sh = { "shfmt" },
