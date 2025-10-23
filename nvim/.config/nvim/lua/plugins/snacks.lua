@@ -107,7 +107,7 @@ return {
 		{
 			"<leader>re",
 			function()
-				Snacks.picker.resume()
+				Snacks.picker.resume({ exclude = { "select" } })
 			end,
 			desc = "Resume previous session",
 		},
