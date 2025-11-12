@@ -46,7 +46,10 @@ return {
 				grep = {
 					-- this hides the text match from the grep result.
 					transform = function(item)
-						item.line = nil
+						item.resolve = function()
+							return {}
+						end
+						return item
 					end,
 				},
 			},
