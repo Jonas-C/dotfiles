@@ -7,7 +7,7 @@ bold-is-bright = true
 
 # These values might need to be edited when changing font-family or font-size
 # Make sure to keep these two in sync. 
-adjust-cell-height = 47%
+adjust-cell-height = 46%
 adjust-cursor-height = 20%
 # I like a thicker cursor
 adjust-cursor-thickness = 200%
