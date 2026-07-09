@@ -50,6 +50,7 @@ alias ls='eza -G --color auto --icons -s type'
 alias ll='eza -l --color always --icons -s type'
 alias cat="bat"
 alias ta="tmux attach"
+alias neonight="mise use -g neovim@nightly -f"
 eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
