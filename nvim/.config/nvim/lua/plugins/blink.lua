@@ -1,8 +1,9 @@
 return {
+	{ "saghen/blink.lib" },
 	{
 		"saghen/blink.cmp",
-		version = false,
 		enabled = true,
+		version = "v1",
 		build = "cargo build --release",
 		opts = {
 			cmdline = {
