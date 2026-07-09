@@ -1,17 +1,15 @@
 {
- "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+  "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
   "runtime": {
-    "version": "LuaJIT"
+    "version": "LuaJIT",
   },
   "workspace": {
-    "checkThirdParty": "false",
     "library": [
       // Runtime and builtin libraries.
       "$VIMRUNTIME/lua",
-      "${3rd}/luv/library"
-    ]
+      "$XDG_DATA_HOME/nvim/lazy",
+      "${3rd}/luv/library",
+    ],
   },
-    "diagnostics.globals": [
-        "Snacks"
-    ]
+  "diagnostics.globals": ["Snacks"],
 }
