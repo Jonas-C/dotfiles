@@ -41,7 +41,7 @@ map <leader>r <Action>(RenameElement)
 map <S-l> <Action>(ShowErrorDescription)
 
 map gn <Action>(GotoNextError)
-map gp :action GotoPreviousProblem<CR>
+map gp :action GotoPreviousError<CR>
 
 map <leader>. :action ShowIntentionActions<CR>
 
