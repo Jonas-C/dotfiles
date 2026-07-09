@@ -17,6 +17,7 @@ opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.wildmode = "longest:full,full"
+opt.statusline = "%{%v:lua.require'statusline'.render()%}"
 
 opt.relativenumber = true
 opt.termguicolors = true
@@ -50,7 +51,7 @@ opt.cursorline = true
 opt.mouse = "a"
 opt.cmdheight = 1
 opt.pumheight = 10
-opt.laststatus = 2
+opt.laststatus = 3
 opt.linebreak = true
 opt.ruler = false
 opt.virtualedit = "block"

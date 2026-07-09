@@ -1,5 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
+	enabled = false,
 	config = function()
 		local tmux = require("lualine.component"):extend()
 		tmux.default = {}
@@ -62,7 +63,7 @@ return {
 		require("lualine").setup({
 			options = {
 				globalstatus = true,
-				theme = "catppuccin",
+				theme = "catppuccin-nvim",
 				ignore_focus = { "neo-tree" },
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
